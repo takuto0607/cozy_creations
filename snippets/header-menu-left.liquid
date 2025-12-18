@@ -1,0 +1,22 @@
+{% comment %}
+  header-menu-left.liquid
+  引数:
+  - menu: linklists オブジェクト
+{% endcomment %}
+
+{% if menu != blank %}
+  <nav class="header__inline-menu header__inline-menu--left">
+    <ul class="list-menu list-menu--inline" role="list">
+      {% for link in menu.links %}
+        <li>
+          <a
+            href="{{ link.url }}"
+            class="header__menu-item list-menu__item link link--text focus-inset"
+          >
+            <span>{{ link.title }}</span>
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+  {% endif %}

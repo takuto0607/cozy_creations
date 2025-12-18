@@ -1,0 +1,10 @@
+# Shopify
+.config/
+.shopify/
+node_modules/
+
+# OS / Editor
+.DS_Store
+
+# Build系（Sassなど導入する場合）
+dist/

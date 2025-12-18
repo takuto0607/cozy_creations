@@ -1,0 +1,14 @@
+.header-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.banner__heading {
+  font-family: "Shippori Mincho", serif;
+  font-size: 40px;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+}
