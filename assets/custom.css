@@ -1,3 +1,16 @@
+/* ========== Base ========== */
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
 /* ========== Header ========== */
 .header-wrapper {
   position: absolute;
@@ -22,8 +35,30 @@
   padding: 0;
 }
 
+.header__menu-item span {
+  letter-spacing: 0;
+}
+
+.header__inline-menu--left {
+  padding-left: 12px;
+  padding-right: 31px;
+  padding-top: 7px;
+}
+
+.header__inline-menu--right {
+  padding-left: 59px;
+  padding-right: 0;
+  padding-top: 7px;
+}
+
 .header .list-menu--inline {
-  gap: 40px;
+  gap: 0 40px;
+}
+
+.list-menu--inline li {
+  display: flex;
+  justify-content: center;
+  width: 116px;
 }
 
 .header__inline-menu a {
@@ -31,6 +66,34 @@
   font-family: "Marcellus", serif;
   font-size: 16px;
   line-height: 1.5;
+}
+
+/* Header icons */
+.header__icons {
+  gap: 0 20px;
+  padding-left: 1px;
+  padding-right: 0;
+  padding-top: 7px;
+}
+
+.header__icon--search {
+  width: 20px;
+  height: 30px;
+}
+
+.header__icon--account {
+  width: 18px;
+  height: 30px;
+}
+
+.header__icon--cart {
+  width: 23px;
+  height: 30px;
+}
+
+.header__icons .svg-wrapper {
+  height: 100%;
+  width: 100%;
 }
 
 @media screen and (min-width: 990px) {
@@ -47,14 +110,10 @@
   }
 }
 
-.uppercase {
-  text-transform: uppercase;
+/* ========== Hero ========== */
+.hero__heading--pc {
+  display: block;
 }
-
-.lowercase {
-  text-transform: lowercase;
-}
-
-.capitalize {
-  text-transform: capitalize;
+.hero__heading--sp {
+  display: none;
 }

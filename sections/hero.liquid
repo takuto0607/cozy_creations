@@ -1,0 +1,105 @@
+<section id="hero" class="hero">
+  <div class="hero__content">
+    <h2>
+      {% comment %} PCレイアウト {% endcomment %}
+      <span class="hero__heading hero__heading--pc">
+        <span>{{ section.settings.heading_pc_line1 }}</span>
+        <span>{{ section.settings.heading_pc_line2 }}</span>
+      </span>
+
+      {% comment %} SPレイアウト {% endcomment %}
+      <span class="hero__heading hero__heading--sp">
+        <span>{{ section.settings.heading_sp_line1 }}</span>
+        <span>{{ section.settings.heading_sp_line2 }}</span>
+        <span>{{ section.settings.heading_sp_line3 }}</span>
+      </span>
+    </h2>
+    <div class="hero__button-wrapper">
+      <div class="hero_button">
+        <a href="{{ section.settings.button_url }}" class="custom-btn">{{ section.settings.button_label }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "背景画像"
+    },
+    {
+      "type": "header",
+      "content": "見出し（PC）"
+    },
+    {
+      "type": "text",
+      "id": "heading_pc_line1",
+      "label": "PC：見出し 1行目",
+      "default": "毎日に、心地よさをデザイン"
+    },
+    {
+      "type": "text",
+      "id": "heading_pc_line2",
+      "label": "PC：見出し 2行目",
+      "default": "サステナブルで美しい家具を、あなたの暮らしへ"
+    },
+    
+    {
+      "type": "header",
+      "content": "見出し（SP）"
+    },
+    {
+      "type": "text",
+      "id": "heading_sp_line1",
+      "label": "SP：見出し 1行目",
+      "default": "毎日に、心地よさをデザイン"
+    },
+    {
+      "type": "text",
+      "id": "heading_sp_line2",
+      "label": "SP：見出し 2行目",
+      "default": "サステナブルで美しい家具を"
+    },
+    {
+      "type": "text",
+      "id": "heading_sp_line3",
+      "label": "SP：見出し 3行目",
+      "default": "あなたの暮らしへ"
+    },
+    {
+      "type": "header",
+      "content": "ボタンレイアウト"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "ボタン文言",
+      "default": "View More"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "リンク先"
+    },
+    {
+      "type": "select",
+      "id": "button_variant",
+      "label": "ボタン色",
+      "options": [
+        { "value": "white", "label": "白" },
+        { "value": "gray", "label": "グレー" }
+      ],
+      "default": "white"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Hero"
+    }
+  ]
+}
+{% endschema %}
