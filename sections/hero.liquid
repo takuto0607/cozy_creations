@@ -1,22 +1,33 @@
-<section id="hero" class="hero">
-  <div class="hero__content">
-    <h2>
-      {% comment %} PCレイアウト {% endcomment %}
-      <span class="hero__heading hero__heading--pc">
-        <span>{{ section.settings.heading_pc_line1 }}</span>
-        <span>{{ section.settings.heading_pc_line2 }}</span>
-      </span>
+{%- style -%}
+  .hero__bg {
+    background-image: url('{{ section.settings.background_image | image_url: width: 1440 }}');
+  }
+{%- endstyle -%}
 
-      {% comment %} SPレイアウト {% endcomment %}
-      <span class="hero__heading hero__heading--sp">
-        <span>{{ section.settings.heading_sp_line1 }}</span>
-        <span>{{ section.settings.heading_sp_line2 }}</span>
-        <span>{{ section.settings.heading_sp_line3 }}</span>
-      </span>
-    </h2>
-    <div class="hero__button-wrapper">
-      <div class="hero_button">
-        <a href="{{ section.settings.button_url }}" class="custom-btn">{{ section.settings.button_label }}</a>
+<section id="hero" class="hero">
+  <div class="hero__bg">
+    <div class="hero__content">
+      <h2>
+        {% comment %} PCレイアウト {% endcomment %}
+        <span class="hero__heading hero__heading--pc">
+          <span>{{ section.settings.heading_pc_line1 | replace: '、', '<span class="comma">、</span>' }}</span>
+          <span>{{ section.settings.heading_pc_line2 | replace: '、', '<span class="comma">、</span>' }}</span>
+        </span>
+  
+        {% comment %} SPレイアウト {% endcomment %}
+        <span class="hero__heading hero__heading--sp">
+          <span>{{ section.settings.heading_sp_line1 | replace: '、', '<span class="comma">、</span>' }}</span>
+          <span>{{ section.settings.heading_sp_line2 | replace: '、', '<span class="comma">、</span>' }}</span>
+          <span>{{ section.settings.heading_sp_line3 | replace: '、', '<span class="comma">、</span>' }}</span>
+        </span>
+      </h2>
+      <div class="hero__button-wrapper">
+        <div class="hero_button">
+          {% render 'custom-button',
+            btn_url: section.settings.button_url,
+            btn_label: section.settings.button_label
+          %}
+        </div>
       </div>
     </div>
   </div>

@@ -11,6 +11,14 @@
   text-transform: capitalize;
 }
 
+:root {
+  --font-family-shippori-mincho: "Shippori Mincho", serif;
+  --font-famile-marcellus: "Marcellus", serif;
+
+  --font-color-white: rgb(255, 255, 255);
+  --font-color-black: rgb(0, 0, 0);
+}
+
 /* ========== Header ========== */
 .header-wrapper {
   position: absolute;
@@ -111,9 +119,110 @@
 }
 
 /* ========== Hero ========== */
+.hero {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.hero__bg {
+  height: 768px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  width: auto;
+}
+
+.hero__bg::after {
+  background-color: rgba(0, 0, 0, 0.5);
+  content: "";
+  inset: 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.hero__content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  left: 50%;
+  margin-top: 272px;
+  position: absolute;
+  transform: translate(-50%, 0);
+  width: 100%;
+  z-index: 2;
+}
+
+.hero__content h2 {
+  margin-top: 0;
+  margin-bottom: 51px;
+}
+
+.hero__heading {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero__heading span {
+  color: var(--font-color-white);
+  display: block;
+  font-family: var(--font-family-shippori-mincho);
+  font-size: 40px;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.hero__heading .comma {
+  display: inline;
+  letter-spacing: -0.33em;
+}
+
 .hero__heading--pc {
   display: block;
 }
 .hero__heading--sp {
   display: none;
+}
+
+/* Cutom Button */
+.custom-btn {
+  align-items: center;
+  background-color: var(--font-color-white);
+  color: var(--font-color-black);
+  display: flex;
+  font-family: var(--font-famile-marcellus);
+  font-size: 16px;
+  height: 50px;
+  letter-spacing: 0.1em;
+  line-height: 1.5;
+  justify-content: center;
+  position: relative;
+  text-decoration: none;
+  width: 300px;
+}
+
+.custom-btn::after {
+  background-color: var(--font-color-black);
+  clip-path: polygon(0 0, 0% 100%, 100% 50%);
+  -webkit-clip-path: polygon(0 0, 0% 100%, 100% 50%);
+  content: "";
+  height: 10px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  width: 10px;
+}
+
+/* ========== Top Products ========== */
+.product-card.is-placeholder {
+  opacity: 0.5;
+}
+
+.product-card__image.placeholder {
+  aspect-ratio: 1 / 1;
+  background: #f2f2f2;
 }

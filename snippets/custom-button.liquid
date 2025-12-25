@@ -1,0 +1,6 @@
+{%- liquid
+  assign btn_url   = btn_url   | default: '#'
+  assign btn_label = btn_label | default: 'Button'
+-%}
+
+<a href="{{ btn_url }}" class="custom-btn capitalize">{{ btn_label }}</a>

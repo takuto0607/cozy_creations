@@ -1,0 +1,199 @@
+<section id="top-products" class="top-products">
+  <div class="top-products__content">
+    {% if section.settings.show_new %}
+      <div class="new-products">
+        <h2 class="capitalize">{{ section.settings.new_title }}</h2>
+        <ul class="new_products__list">
+          {%- liquid
+            assign new_products = collections.all.products | sort: 'created_at' | reverse
+          -%}
+          {% if new_products.size > 0 %}
+            {% for product in new_products limit: section.settings.new_limit %}
+              <li class="new_products__item">
+                {% render "product-card",
+                  product: product,
+                  show_size: false
+                %}
+              </li>
+            {% endfor %}
+          {% else %}
+            {% for display_number in (1..section.settings.new_limit) %}
+              <li class="new_products__item">
+                <div class="product-card is-placeholder">
+                  <div class="product-card__image placeholder"></div>
+                  <div class="product-cart__content">
+                    <p>カテゴリ</p>
+                    <h3>商品名</h3>
+                    <div class="product-card__price">
+                      <span class="price">¥0</span>
+                      <span class="price-tax">（税込￥0）</span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            {% endfor %}
+          {% endif %}
+        </ul>
+        <div class="new_products__button-wrapper">
+          <div class="new_products__button">
+            <a href="{{ section.settings.new_products_button_url }}" class="custom-btn">{{ section.settings.new_products_button_label }}</a>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+    {% if section.settings.show_best %}
+      <div class="best-products">
+        <h2 class="capitalize">{{ section.settings.best_title }}</h2>
+        <ul class="best_products__list">
+          {%- liquid
+            assign best_products = collections.all.products
+          -%}
+          {% if best_products.size > 0 %}
+            {% for product in best_products limit: section.settings.best_limit %}
+              <li class="best_products__item">
+                {% render "product-card",
+                  product: product,
+                  show_size: false
+                %}
+              </li>
+            {% endfor %}
+          {% else %}
+            {% for display_number in (1..section.settings.best_limit) %}
+              <li class="best_products__item">
+                <div class="product-card is-placeholder">
+                  <div class="product-card__image placeholder"></div>
+                  <div class="product-cart__content">
+                    <p>カテゴリ</p>
+                    <h3>商品名</h3>
+                    <div class="product-card__price">
+                      <span class="price">¥0</span>
+                      <span class="price-tax">（税込￥0）</span>
+                    </div>
+                  </div>
+                </div>
+              </li>
+            {% endfor %}
+          {% endif %}
+        </ul>
+        <div class="best_products__button-wrapper">
+          <div class="best_products__button">
+            <a href="{{ section.settings.best_products_button_url }}" class="custom-btn">{{ section.settings.best_bproducts_utton_label }}</a>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "トップ：商品一覧",
+  "settings": [
+    {
+      "type": "header",
+      "content": "新着商品"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_new",
+      "label": "新着商品を表示",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "new_title",
+      "label": "新着商品タイトル",
+      "default": "new arrivals"
+    },
+    {
+      "type": "range",
+      "id": "new_limit",
+      "label": "新着商品の表示件数",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "header",
+      "content": "ボタンレイアウト（新着商品）"
+    },
+    {
+      "type": "text",
+      "id": "new_products_button_label",
+      "label": "ボタン文言",
+      "default": "View More"
+    },
+    {
+      "type": "url",
+      "id": "new_products_button_url",
+      "label": "リンク先"
+    },
+    {
+      "type": "select",
+      "id": "new_products_button_variant",
+      "label": "ボタン色",
+      "options": [
+        { "value": "white", "label": "白" },
+        { "value": "gray", "label": "グレー" }
+      ],
+      "default": "white"
+    },
+    {
+      "type": "header",
+      "content": "ベストセラー商品"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_best",
+      "label": "ベストセラー商品を表示",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "best_title",
+      "label": "ベストセラー商品タイトル",
+      "default": "best sells"
+    },
+    {
+      "type": "range",
+      "id": "best_limit",
+      "label": "新着商品の表示件数",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "default": 3
+    },
+    {
+      "type": "header",
+      "content": "ボタンレイアウト（ベストセラー商品）"
+    },
+    {
+      "type": "text",
+      "id": "best_products_button_label",
+      "label": "ボタン文言",
+      "default": "View More"
+    },
+    {
+      "type": "url",
+      "id": "best_products_button_url",
+      "label": "リンク先"
+    },
+    {
+      "type": "select",
+      "id": "best_products_button_variant",
+      "label": "ボタン色",
+      "options": [
+        { "value": "white", "label": "白" },
+        { "value": "gray", "label": "グレー" }
+      ],
+      "default": "white"
+    },
+  ],
+  "presets": [
+    {
+      "name": "トップ：新着&ベストセラー商品"
+    }
+  ]
+}
+{% endschema %}
