@@ -9,10 +9,10 @@
         }}
       {% endif %}
     </div>
-    <div class="product-cart__content">
+    <div class="product-card__content">
       <!-- カテゴリ -->
       {% if product.type != blank %}
-        <p>{{ product.type }}</p>
+        <p class="product-card__category">{{ product.type }}</p>
       {% endif %}
 
       <!-- 商品名 -->
@@ -21,7 +21,7 @@
       <!-- 価格 -->
       <div class="product-card__price">
         <span class="price">{{ product.price | money }}</span>
-        <span class="price-tax">（税込￥{{ product.price | times: 1.1 | money }}）</span>
+        <span class="price-tax">（税込{{ product.price | times: 1.1 | money }}）</span>
       </div>
 
       <!-- サイズ（条件表示） -->
