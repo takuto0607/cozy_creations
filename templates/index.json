@@ -20,8 +20,7 @@
         "heading_sp_line2": "サステナブルで美しい家具を",
         "heading_sp_line3": "あなたの暮らしへ",
         "button_label": "view products",
-        "button_url": "shopify://collections/all",
-        "button_variant": "white"
+        "button_url": "shopify://collections/all"
       }
     },
     "top_products_3Nyzjb": {
@@ -33,18 +32,57 @@
         "new_limit": 3,
         "new_products_button_label": "View More",
         "new_products_button_url": "",
-        "new_products_button_variant": "white",
         "show_best": true,
         "best_title": "best sells",
         "best_limit": 3,
         "best_products_button_label": "View More",
-        "best_products_button_url": "",
-        "best_products_button_variant": "white"
+        "best_products_button_url": ""
+      }
+    },
+    "category_list_8b7jVk": {
+      "type": "category-list",
+      "blocks": {
+        "category_yWKxih": {
+          "type": "category",
+          "settings": {
+            "collection": "椅子"
+          }
+        },
+        "category_wbxWDN": {
+          "type": "category",
+          "settings": {
+            "collection": "テーブル"
+          }
+        },
+        "category_dVcGPJ": {
+          "type": "category",
+          "settings": {
+            "collection": "ソファ"
+          }
+        },
+        "category_feViAC": {
+          "type": "category",
+          "settings": {
+            "collection": "棚"
+          }
+        }
+      },
+      "block_order": [
+        "category_yWKxih",
+        "category_wbxWDN",
+        "category_dVcGPJ",
+        "category_feViAC"
+      ],
+      "name": "カテゴリー一覧",
+      "settings": {
+        "title": "products",
+        "background_image": "shopify://shop_images/products_bg.jpg"
       }
     }
   },
   "order": [
     "hero_M36aMx",
-    "top_products_3Nyzjb"
+    "top_products_3Nyzjb",
+    "category_list_8b7jVk"
   ]
 }
