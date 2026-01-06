@@ -1,0 +1,66 @@
+<section id="news" class="news">
+  <div class="news__content">
+    <div class="news__title capitalize">
+      <h2>{{ section.settings.title }}</h2>
+      <div class="news__button">
+        {% render 'custom-button',
+          btn_url: section.settings.news_button_url,
+          btn_label: section.settings.news_button_label
+        %}
+      </div>
+    </div>
+    <ul class="news__list">
+      {%- for article in blogs['news'].articles limit: 3 -%}
+        <li class="news__item">
+          <a class="news__link" href="{{ article.url }}">
+            <div class="news__item-meta">
+              <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+                {{ article.published_at | date: '%Y.%m.%d' }}
+              </time>
+              {%- if article.tags contains 'news' -%}
+                <span class="news__category capitalize">news</span>
+              {%- elsif article.tags contains 'blog' -%}
+                <span class="news__category capitalize">blog</span>
+              {%- endif -%}
+            </div>
+            <h3>{{ article.title }}</h3>
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "news-blog",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "タイトル",
+      "default": "news / blog"
+    },
+    {
+      "type": "header",
+      "content": "ボタンレイアウト"
+    },
+    {
+      "type": "text",
+      "id": "news_button_label",
+      "label": "ボタン文言",
+      "default": "view more"
+    },
+    {
+      "type": "url",
+      "id": "news_button_url",
+      "label": "リンク先"
+    }
+  ],
+  "presets": [
+    {
+      "name": "news-blog"
+    }
+  ]
+}
+{% endschema %}

@@ -18,8 +18,11 @@
 
   --font-color-white: rgb(255, 255, 255);
   --font-color-black: rgb(0, 0, 0);
+  --font-color-black2: rgb(117, 116, 116);
   --font-color-gray: rgb(240, 240, 240);
   --font-color-gray2: rgb(217, 217, 217);
+  --font-color-gray3: rgb(248, 248, 248);
+  --font-color-gray4: rgb(237, 237, 237);
 }
 
 /* ========== Header ========== */
@@ -441,4 +444,92 @@
 
 .concept__button a {
   border: 1px solid var(--font-color-black);
+}
+
+/* ========== News ========== */
+.news {
+  background-color: var(--font-color-gray3);
+}
+
+.news__content {
+  display: flex;
+  justify-content: space-between;
+  margin-inline: auto;
+  max-width: 1200px;
+  padding: 100px 0;
+  width: 100%;
+}
+
+.news__title h2 {
+  font-family: var(--font-family-marcellus);
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  margin: 0 0 40px;
+}
+
+.news__button a {
+  background-color: inherit;
+  border: 1px solid var(--font-color-black);
+}
+
+.news__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.news__item {
+  border-bottom: 1px solid var(--font-color-black2);
+  width: 634px;
+}
+
+.news__list > .news__item:first-child {
+  border-top: 1px solid var(--font-color-black2);
+}
+
+.news__link {
+  color: var(--font-color-black);
+  display: block;
+  padding: 24px 10px;
+  text-decoration: none;
+}
+
+.news__item-meta {
+  display: flex;
+  gap: 0 15px;
+  margin-bottom: 15px;
+}
+
+.news__item-meta time {
+  font-family: var(--font-family-marcellus);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.news__category {
+  align-items: center;
+  background-color: var(--font-color-gray4);
+  border-radius: 20px;
+  display: flex;
+  font-family: var(--font-family-marcellus);
+  font-size: 12px;
+  height: 22px;
+  justify-content: center;
+  letter-spacing: 0;
+  line-height: 1.5;
+  width: 80px;
+}
+
+.news__link h3 {
+  font-family: var(--font-family-yu-gothic);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5;
+  margin: 0;
 }
