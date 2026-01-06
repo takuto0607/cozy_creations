@@ -78,11 +78,22 @@
         "title": "products",
         "background_image": "shopify://shop_images/products_bg.jpg"
       }
+    },
+    "concept_VbDXHr": {
+      "type": "concept",
+      "name": "Concept",
+      "settings": {
+        "title": "concept",
+        "concept_image": "shopify://shop_images/concept.jpg",
+        "concept_button_label": "view more",
+        "concept_button_url": ""
+      }
     }
   },
   "order": [
     "hero_M36aMx",
     "top_products_3Nyzjb",
-    "category_list_8b7jVk"
+    "category_list_8b7jVk",
+    "concept_VbDXHr"
   ]
 }

@@ -1,0 +1,64 @@
+<section id="concept" class="concept">
+  <div class="concept__content">
+    <div class="concept__image">
+      {%- if section.settings.concept_image != blank -%}
+        <img
+          src="{{ section.settings.concept_image | image_url: width: 600 }}}" 
+          alt="黒い椅子"
+          width="600"
+          height="353"
+          loading="lazy"
+        >
+      {%- endif -%}
+    </div>
+    <div class="concept__text">
+      <h2 class="capitalize">{{ section.settings.title }}</h2>
+      <p>Cozy Creations（コージークリエーションズ）は、あなたの暮らしをもっと心地よいものにするためのインテリア・家具ブランドです。<br>私たちが目指すのは、シンプルで美しいデザインと、環境に優しい素材を組み合わせた家具づくり。<br>家具はただの道具ではなく、毎日の暮らしに彩りを与えるもの。あなたの理想の空間を一緒に作り上げましょう。</p>
+      <div class="concept__button">
+        {% render 'custom-button',
+          btn_url: section.settings.concept_button_url,
+          btn_label: section.settings.concept_button_label
+        %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Concept",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "タイトル",
+      "default": "concept"
+    },
+    {
+      "type": "image_picker",
+      "id": "concept_image",
+      "label": "コンセプト画像",
+    },
+    {
+      "type": "header",
+      "content": "ボタンレイアウト"
+    },
+    {
+      "type": "text",
+      "id": "concept_button_label",
+      "label": "ボタン文言",
+      "default": "view more"
+    },
+    {
+      "type": "url",
+      "id": "concept_button_url",
+      "label": "リンク先"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Concept"
+    }
+  ]
+}
+{% endschema %}

@@ -407,3 +407,38 @@
   right: 31.43px;
   width: 7.14px;
 }
+
+/* ========== Concept ========== */
+.concept__content {
+  display: flex;
+  gap: 0 53px;
+  margin-inline: auto;
+  max-width: 1200px;
+  padding: 100px 0;
+  width: 100%;
+}
+
+.concept__image {
+  line-height: 0;
+}
+
+.concept__text h2 {
+  font-family: var(--font-family-marcellus);
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  margin: 0 0 12px;
+}
+
+.concept__text p {
+  font-family: var(--font-family-shippori-mincho);
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  line-height: 2;
+  margin: 0 0 24px;
+}
+
+.concept__button a {
+  border: 1px solid var(--font-color-black);
+}
