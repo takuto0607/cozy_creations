@@ -20,9 +20,9 @@
         "show_products_cta": true,
         "products_image": "shopify://shop_images/footer-products.jpg",
         "products_url": "",
-        "address": "",
+        "address": "〒150-0001 東京都渋谷区神宮前5-12-3 コージービル3F",
         "policy_menu": "",
-        "global_menu": ""
+        "global_menu": "custom-footer-menu"
       }
     }
   },
