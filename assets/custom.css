@@ -15,6 +15,7 @@
   --font-family-shippori-mincho: "Shippori Mincho", serif;
   --font-family-marcellus: "Marcellus", serif;
   --font-family-yu-gothic: "Yu Gothic", "Yu Gothic Medium", "YuGothic", sans-serif;
+  --font-family-noto-sans-cjk-jp: "noto-sans-cjk-jp", sans-serif;
 
   --font-color-white: rgb(255, 255, 255);
   --font-color-black: rgb(0, 0, 0);
@@ -23,6 +24,7 @@
   --font-color-gray2: rgb(217, 217, 217);
   --font-color-gray3: rgb(248, 248, 248);
   --font-color-gray4: rgb(237, 237, 237);
+  --font-color-gray5: rgba(245, 245, 245);
 }
 
 /* ========== Header ========== */

@@ -1,0 +1,137 @@
+{%- style -%}
+.custom-footer__cta-link--contact::before {
+  background-image: url('{{ section.settings.contact_image | image_url: width: 600 }}');
+}
+
+.custom-footer__cta-link--products::before {
+  background-image: url('{{ section.settings.products_image | image_url: width: 600 }}');
+}
+{%- endstyle -%}
+
+{%- assign show_contact_cta = true -%}
+
+{%- if template contains 'page.contact' -%}
+  {%- assign show_contact_cta = false -%}
+{%- endif -%}
+
+<footer id="footer" class="custom-footer" role="contentinfo">
+  <div class="custom-footer__cta">
+    {%- if section.settings.show_contact_cta and show_contact_cta -%}
+      <a class="custom-footer__cta-link custom-footer__cta-link--contact capitalize" href="{{ section.settings.contact_url }}">contact</a>
+    {%- endif -%}
+    {%- if section.settings.show_products_cta -%}
+      <a class="custom-footer__cta-link custom-footer__cta-link--products capitalize" href="{{ section.settings.products_url }}">products</a>
+    {%- endif -%}
+  </div>
+  <div class="custom-footer__main">
+    <div class="custom-footer__main-content">
+      <div class="custom-footer__info">
+        <p class="custom-footer__brand capitalize">cozy creations</p>
+        {%- if section.settings.address != blank -%}
+          <address class="custom-footer__address">
+            {{ section.settings.address }}
+          </address>
+        {%- endif -%}
+        {%- if section.settings.policy_menu != blank -%}
+          <ul class="custom-footer__policy">
+            {%- for link in linklists[section.settings.policy_menu].links -%}
+              <li>
+                <a href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        {%- endif -%}
+      </div>
+      {%- if section.settings.global_menu != blank -%}
+        <nav class="custom-footer__nav" aria-label="フッターナビゲーション">
+          <ul class="custom-footer__list">
+            {%- for link in linklists[section.settings.global_menu].links -%}
+              <li class="custom-footer__item">
+                <a class="custom-footer__link capitalize" href="{{ link.url }}">{{ link.title }}</a>
+              </li>
+            {%- endfor -%}
+          </ul>
+        </nav>
+      {%- endif -%}
+    </div>
+  </div>
+  <div class="custom-footer__copyright">
+    <p>© Cozy Creations Co.,Ltd. All Rights Reserved.</p>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Custom Footer",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Contact CTA"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_contact_cta",
+      "label": "Contact CTAを表示",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "contact_image",
+      "label": "Contact CTA画像"
+    },
+    {
+      "type": "url",
+      "id": "contact_url",
+      "label": "Contact リンク先"
+    },
+    {
+      "type": "header",
+      "content": "Products CTA"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_products_cta",
+      "label": "Products CTAを表示",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "products_image",
+      "label": "Products CTA画像"
+    },
+    {
+      "type": "url",
+      "id": "products_url",
+      "label": "Products リンク先"
+    },
+    {
+      "type": "header",
+      "content": "Address"
+    },
+    {
+      "type": "textarea",
+      "id": "address",
+      "label": "住所"
+    },
+    {
+      "type": "header",
+      "content": "メニュー"
+    },
+    {
+      "type": "link_list",
+      "id": "policy_menu",
+      "label": "ポリシーメニュー"
+    },
+    {
+      "type": "link_list",
+      "id": "global_menu",
+      "label": "グローバルメニュー"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Footer"
+    }
+  ]
+}
+{% endschema %}

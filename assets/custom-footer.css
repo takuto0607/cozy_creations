@@ -1,0 +1,111 @@
+/* ========== Custom Footer ========== */
+.custom-footer__cta {
+  display: flex;
+  justify-content: center;
+  margin-inline: auto;
+  max-width: 1200px;
+  padding: 100px 0;
+  width: 100%;
+}
+
+.custom-footer__cta-link {
+  align-items: center;
+  display: flex;
+  color: var(--font-color-white);
+  font-family: var(--font-family-marcellus);
+  font-size: 32px;
+  height: 240px;
+  justify-content: center;
+  letter-spacing: 0.1em;
+  line-height: 1.25;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  width: 600px;
+  z-index: 1;
+}
+
+.custom-footer__cta-link::before {
+  background-blend-mode: multiply;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: "";
+  inset: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.custom-footer__main {
+  background-color: var(--font-color-gray5);
+}
+
+.custom-footer__main-content {
+  display: flex;
+  justify-content: space-between;
+  margin-inline: auto;
+  max-width: 1280px;
+  padding: 100px 0;
+  width: 100%;
+}
+
+.custom-footer__info {
+  max-width: 480px;
+}
+
+.custom-footer__brand {
+  color: var(--font-color-black);
+  font-family: var(--font-family-yu-gothic);
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.5;
+  margin: 0 0 9px;
+}
+
+.custom-footer__address {
+  color: var(--font-color-black);
+  font-family: var(--font-family-yu-gothic);
+  font-size: 16px;
+  font-style: normal;
+  letter-spacing: 0;
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.custom-footer__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.custom-footer__list {
+  display: flex;
+  gap: 0 20px;
+}
+
+.custom-footer__link {
+  color: var(--font-color-black);
+  font-family: var(--font-family-marcellus);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5;
+  text-decoration: none;
+}
+
+.custom-footer__copyright {
+  background-color: var(--font-color-black);
+  padding: 40px 0;
+}
+
+.custom-footer__copyright p {
+  color: var(--font-color-white);
+  font-family: var(--font-family-noto-sans-cjk-jp);
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 1.5;
+  margin: 0;
+  text-align: center;
+}
