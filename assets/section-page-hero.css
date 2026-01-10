@@ -1,0 +1,25 @@
+.page-hero {
+  padding: 180px 0 100px;
+}
+
+.page-hero__title {
+  color: var(--font-color-black);
+  font-family: var(--font-family-marcellus);
+  font-size: 64px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1;
+  margin: 0 0 12px;
+  text-align: center;
+}
+
+.page-hero__subtext {
+  color: var(--font-color-black);
+  font-family: var(--font-family-shippori-mincho);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1;
+  margin: 0;
+  text-align: center;
+}

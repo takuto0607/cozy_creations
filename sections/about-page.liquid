@@ -1,0 +1,104 @@
+{{ 'section-about-page.css' | asset_url | stylesheet_tag }}
+
+<section class="about">
+  <div class="about__content">
+    <div class="about__head-text">
+      <h3>心地よい暮らしをデザインする</h3>
+      <p>Cozy Creations（コージークリエーションズ）は、サステナブルで美しい家具を通じて、あなたの理想のライフスタイルを実現します。<br>デザイン、素材、機能性、すべてにこだわり、心地よさを追求した家具をお届けします。</p>
+    </div>
+    <div class="about__block-group">
+      <div class="about__block">
+        <div class="about__image">
+          {%- if section.settings.about_image_1 != blank -%}
+            {{ section.settings.about_image_1
+              | image_url: width: 600
+              | image_tag }}
+          {%- endif -%}
+        </div>
+        <div class="about__text">
+          <h4>サステナブルな未来を目指して</h4>
+          <p>私たちの家具は、地球環境を守るために厳選された素材で作られています。<br>
+            リサイクル素材やFSC認証木材を使用し、生産過程での廃棄物削減に注力し、環境に優しいパッケージデザインを採用しております。</p>
+        </div>
+      </div>
+      <div class="about__block">
+        <div class="about__image">
+          {%- if section.settings.about_image_2 != blank -%}
+            {{ section.settings.about_image_2
+              | image_url: width: 600
+              | image_tag }}
+          {%- endif -%}
+        </div>
+        <div class="about__text">
+          <h4>理想を形にする家具作り</h4>
+          <p>あなたのアイデアや空間に合わせて、家具をカスタマイズできます。<br>サイズ、カラー、素材、仕上げまで自由に選択可能。<br>世界に一つだけの家具で、あなたらしい空間を作りましょう。<br>
+            まずはご相談ください。</p>
+          <div class="about__button">
+            {% render 'custom-button',
+              btn_url: section.settings.about_button_url,
+              btn_label: section.settings.about_button_label
+            %}
+          </div>
+        </div>
+      </div>
+      <div class="about__block">
+        <div class="about__image">
+          {%- if section.settings.about_image_3 != blank -%}
+            {{ section.settings.about_image_3
+              | image_url: width: 600
+              | image_tag }}
+          {%- endif -%}
+        </div>
+        <div class="about__text">
+          <h4>お客様に寄り添うサポート体制</h4>
+          <p>ご購入前からアフターケアまで安心してお任せください。<br>
+            購入前にチャットで専門スタッフがアドバイスいたします。<br>
+            家具の設置まで完全サポートや、長くお使いいただけるように万全の保証を提供しております。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "About Us",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "about_image_1",
+      "label": "画像１"
+    },
+    {
+      "type": "image_picker",
+      "id": "about_image_2",
+      "label": "画像２"
+    },
+    {
+      "type": "image_picker",
+      "id": "about_image_3",
+      "label": "画像３"
+    },
+    {
+      "type": "header",
+      "content": "ボタンレイアウト"
+    },
+    {
+      "type": "text",
+      "id": "about_button_label",
+      "label": "ボタン文言",
+      "default": "contact"
+    },
+    {
+      "type": "url",
+      "id": "about_button_url",
+      "label": "リンク先"
+    },
+  ],
+  "presets": [
+    {
+      "name": "About Us"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,85 @@
+.about__content {
+  margin-inline: auto;
+  max-width: 1200px;
+  padding: 0 0 100px;
+  width: 100%;
+}
+
+.about__head-text {
+  margin-bottom: 114px;
+}
+
+.about__head-text h3 {
+  color: var(--font-color-black);
+  font-family: var(--font-family-shippori-mincho);
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.438;
+  margin: 0 0 12px;
+  text-align: center;
+}
+
+.about__head-text p {
+  color: var(--font-color-black);
+  font-family: var(--font-family-shippori-mincho);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 2;
+  margin: 0;
+  text-align: center;
+}
+
+.about__block {
+  display: flex;
+  gap: 0 53px;
+  margin-bottom: 100px;
+}
+
+.about__block-group > .about__block:nth-child(even) {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}
+
+.about__block:last-of-type {
+  margin-bottom: 0;
+}
+
+.about__image {
+  line-height: 0;
+  width: auto;
+}
+
+.about__image img {
+  height: 353px;
+  width: 600px;
+}
+
+.about__text h4 {
+  color: var(--font-color-black);
+  font-family: var(--font-family-shippori-mincho);
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.438;
+  margin: 0 0 12px;
+}
+
+.about__text p {
+  color: var(--font-color-black);
+  font-family: var(--font-family-shippori-mincho);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  line-height: 2;
+  margin: 0;
+}
+
+.about__button {
+  margin-top: 24px;
+}
+
+.about__button a {
+  border: 1px solid var(--font-color-black);
+}

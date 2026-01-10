@@ -1,0 +1,39 @@
+{{ 'section-page-hero.css' | asset_url | stylesheet_tag }}
+
+<section class="page-hero">
+  <div class="page-hero__content">
+    <h2 class="page-hero__title capitalize">
+      {{ section.settings.title | escape }}
+    </h2>
+
+    {% if section.settings.subtext != blank %}
+      <p class="page-hero__subtext">
+        {{ section.settings.subtext }}
+      </p>
+    {% endif %}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Page Hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "タイトル",
+      "default": "Page Title"
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "サブテキスト"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Page Hero"
+    }
+  ]
+}
+{% endschema %}
