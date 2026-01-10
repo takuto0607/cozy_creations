@@ -18,7 +18,13 @@
     },
     "main": {
       "type": "about-page",
-      "settings": {}
+      "settings": {
+        "about_image_1": "shopify://shop_images/about_image_1.jpg",
+        "about_image_2": "shopify://shop_images/about_image_2.jpg",
+        "about_image_3": "shopify://shop_images/about_image_3.jpg",
+        "about_button_label": "contact",
+        "about_button_url": ""
+      }
     },
     "news_section_9MmPkq": {
       "type": "news-section",
