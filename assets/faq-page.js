@@ -3,7 +3,7 @@ const faqContent = document.querySelector(".faq__content");
 // 設定値
 const props = {
   isAnimating: false,
-  slideDuration: 400,
+  slideDuration: 800,
   slideEasing: "cubic-bezier(0.215, 0.61, 0.355, 1)",
   items: faqContent.querySelectorAll(".faq__item"),
 };

@@ -11,27 +11,18 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "header": {
-      "type": "header",
+    "custom_header": {
+      "type": "custom-header",
       "settings": {
-        "logo_position": "middle-center",
-        "mobile_logo_position": "center",
-        "menu": "",
-        "menu_type_desktop": "dropdown",
-        "sticky_header_type": "none",
-        "show_line_separator": false,
-        "color_scheme": "scheme-1",
-        "menu_color_scheme": "scheme-1",
-        "enable_country_selector": true,
-        "enable_language_selector": true,
-        "enable_customer_avatar": true,
-        "margin_bottom": 0,
-        "padding_top": 16,
-        "padding_bottom": 12
+        "logo_home": "shopify://shop_images/header-logo.webp",
+        "logo_default": "shopify://shop_images/header_logo_default.png",
+        "enable_search": true,
+        "enable_account": true,
+        "enable_cart": true
       }
     }
   },
   "order": [
-    "header"
+    "custom_header"
   ]
 }
