@@ -97,3 +97,33 @@
   line-height: 1.25;
   margin-right: 19px;
 }
+
+.faq__contact {
+  background-color: var(--font-color-white);
+}
+
+.faq__contact-content {
+  margin-inline: auto;
+  max-width: 1122px;
+  padding: 80px 0;
+  width: 100%;
+}
+
+.faq__contact-content p {
+  color: var(--font-color-black);
+  font-family: var(--font-family-shippori-mincho);
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  line-height: 1.45;
+  margin: 0 0 24px;
+}
+
+.faq__contact-button {
+  display: flex;
+  justify-content: center;
+}
+
+.faq__contact-button a {
+  border: 1px solid var(--font-color-black);
+}

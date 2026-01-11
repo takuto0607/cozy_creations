@@ -177,6 +177,17 @@
       </ul>
     </div>
   </div>
+  <div class="faq__contact">
+    <div class="faq__contact-content">
+      <p>上記にないご質問がある場合は、以下のお問い合わせフォームからお気軽にお問い合わせください。</p>
+      <div class="faq__contact-button">
+        {% render 'custom-button',
+          btn_url: section.settings.faq_button_url,
+          btn_label: section.settings.faq_button_label
+        %}
+      </div>
+    </div>
+  </div>
 </section>
 
 <script src="{{ 'faq-page.js' | asset_url }}" defer="defer"></script>
@@ -184,6 +195,22 @@
 {% schema %}
 {
   "name": "FAQ",
-  "settings": []
+  "settings": [
+    {
+      "type": "header",
+      "content": "ボタンレイアウト"
+    },
+    {
+      "type": "text",
+      "id": "faq_button_label",
+      "label": "ボタン文言",
+      "default": "contact"
+    },
+    {
+      "type": "url",
+      "id": "faq_button_url",
+      "label": "リンク先"
+    },
+  ]
 }
 {% endschema %}
