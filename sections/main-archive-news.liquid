@@ -1,0 +1,85 @@
+{{ 'section-archive-news.css' | asset_url | stylesheet_tag }}
+
+<section id="archive-news" class="archive-news">
+  <div class="archive-news__content">
+    <aside class="archive-news__aside">
+      <h3 class="capitalize">category</h3>
+      <ul class="archive-news__categories">
+        {% for tag in blog.all_tags %}
+          <li class="archive-news__category-item">
+            <a class="capitalize" href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </aside>
+    <div class="archive-news__main">
+      {% paginate blog.articles by section.settings.articles_per_page %}
+        <div class="archive-news__list">
+          {% for article in blog.articles %}
+            <article class="archive-news__item">
+              <a class="archive-news__link" href="{{ article.url }}">
+                <div class="archive-news__item-meta">
+                  <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+                    {{ article.published_at | date: '%Y.%m.%d' }}
+                  </time>
+                  {%- if article.tags.size > 0 -%}
+                    <span class="archive-news__category-label capitalize">{{ article.tags.first }}</span>
+                  {%- endif -%}
+                </div>
+                <h3>{{ article.title }}</h3>
+              </a>
+            </article>
+          {% endfor %}
+        </div>
+
+        {% if paginate.pages > 1 %}
+          <nav class="archive-news__pagination" role="navigation" aria-label="Pagination">
+            <ul class="archive-news__pagination-list">
+              {% if paginate.previous %}
+                <li class="archive-news__pagination-item archive-news__pagination-item--prev prev">
+                  <a class="capitalize" href="{{ paginate.previous.url }}">&lt; prev</a>
+                </li>
+              {% endif %}
+
+              {% for part in paginate.parts %}
+                <li class="archive-news__pagination-item archive-news__pagination-item--num
+                  {% unless part.is_link %}is-current{% endunless %}">
+                  {% if part.is_link %}
+                    <a href="{{ part.url }}">{{ part.title }}</a>
+                  {% else %}
+                    <span aria-current="page">{{ part.title }}</span>
+                  {% endif %}
+                </li>
+              {% endfor %}
+        
+              {% if paginate.next %}
+                <li class="archive-news__pagination-item archive-news__pagination-item--next next">
+                  <a class="capitalize" href="{{ paginate.next.url }}">Next &gt;</a>
+                </li>
+              {% endif %}
+            </ul>
+          </nav>
+        {% endif %}
+      {% endpaginate %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "News list",
+  "tag": "section",
+  "class": "section-news",
+  "settings": [
+    {
+      "type": "range",
+      "id": "articles_per_page",
+      "label": "表示件数",
+      "min": 3,
+      "max": 20,
+      "step": 1,
+      "default": 7
+    }
+  ]
+}
+{% endschema %}
