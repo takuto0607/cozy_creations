@@ -1,0 +1,82 @@
+{{ 'section-single-news.css' | asset_url | stylesheet_tag }}
+
+{% assign articles = blog.articles %}
+{% for a in articles %}
+  {% if a.id == article.id %}
+    {% assign current_index = forloop.index0 %}
+  {% endif %}
+{% endfor %}
+{% assign last_index = articles.size | minus: 1 %}
+{% assign prev_index = current_index | minus: 1 %}
+{% assign next_index = current_index | plus: 1 %}
+
+<article class="single-news">
+  <div class="single-news__content">
+    <div class="single-news__meta">
+      <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+        {{ article.published_at | date: '%Y.%m.%d' }}
+      </time>
+      {% if article.tags.size > 0 %}
+        <span class="single-news__category capitalize">
+          {{ article.tags.first }}
+        </span>
+      {% endif %}
+    </div>
+    <h3>{{ article.title }}</h3>
+    {% if article.image %}
+      <div class="single-news__image">
+        {{ article.image | image_url: width: 480 | image_tag }}
+      </div>
+    {% endif %}
+    <div class="single-news__main rte">
+      {{ article.content }}
+    </div>
+    <div class="single-news__nav-wrapper">
+      <nav class="single-news__nav">
+        {% if prev_index >= 0 %}
+          <a class="single-news__prev"
+             href="{{ articles[prev_index].url }}">
+            &lt;
+          </a>
+        {% endif %}
+  
+        <div class="single-news__button">
+          {% render 'custom-button',
+            btn_url: section.settings.news_button_url,
+            btn_label: section.settings.news_button_label
+          %}
+        </div>
+  
+        {% if next_index <= last_index %}
+          <a class="single-news__next"
+             href="{{ articles[next_index].url }}">
+            &gt;
+          </a>
+        {% endif %}
+      </nav>
+    </div>
+  </div>
+</article>
+
+{% schema %}
+{
+  "name": "Single News",
+  "settings": [
+    {
+      "type": "header",
+      "content": "ボタンレイアウト"
+    },
+    {
+      "type": "text",
+      "id": "news_button_label",
+      "label": "ボタン文言",
+      "default": "一覧ページへ戻る"
+    },
+    {
+      "type": "url",
+      "id": "news_button_url",
+      "label": "リンク先"
+    },
+  ]
+}
+{% endschema %}
