@@ -18,10 +18,11 @@
   justify-content: center;
   letter-spacing: 0.1em;
   line-height: 1.25;
+  min-width: 600px;
   overflow: hidden;
   position: relative;
   text-decoration: none;
-  width: 600px;
+  width: 100%;
   z-index: 1;
 }
 

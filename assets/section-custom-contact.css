@@ -1,0 +1,163 @@
+/* ========== Contact Form ========== */
+.contact-form__content {
+  margin-inline: auto;
+  max-width: 720px;
+  padding: 0;
+  width: 100%;
+}
+
+.contact-form__fields {
+  display: flex;
+  flex-direction: column;
+  gap: 8px 0;
+  margin-bottom: 40px;
+}
+
+.contact-form__fields label {
+  align-items: center;
+  color: var(--font-color-black);
+  display: flex;
+  font-family: var(--font-family-yu-gothic);
+  font-size: 16px;
+  font-weight: 500;
+  gap: 0 8px;
+  letter-spacing: 0;
+  line-height: 1.625;
+}
+
+.contact-form__reqired {
+  align-items: center;
+  background-color: var(--font-color-black);
+  color: var(--font-color-white);
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  width: 52px;
+}
+
+.contact-form__optional {
+  align-items: center;
+  border: 1px solid var(--font-color-black);
+  color: var(--font-color-black);
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  width: 52px;
+}
+
+.contact-form__input-text {
+  color: var(--font-color-black);
+  border: 1px solid var(--font-color-black);
+  border-radius: 5px;
+  font-family: var(--font-family-yu-gothic);
+  font-size: 16px;
+  font-weight: 500;
+  height: 46px;
+  letter-spacing: 0;
+  line-height: 1.625;
+  padding: 10px 16px;
+  width: 100%;
+}
+
+.contact-form__input-text::placeholder {
+  color: var(--font-color-gray6);
+}
+
+.contact-form__fields textarea {
+  color: var(--font-color-black);
+  border: 1px solid var(--font-color-black);
+  border-radius: 5px;
+  font-family: var(--font-family-yu-gothic);
+  font-size: 16px;
+  font-weight: 500;
+  height: 180px;
+  letter-spacing: 0;
+  line-height: 1.625;
+  padding: 16px;
+  resize: none;
+  width: 100%;
+}
+
+.contact-form__fields textarea::placeholder {
+  color: var(--font-color-gray6);
+}
+
+.contact-form__privacy {
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  margin-bottom: 40px;
+}
+
+.contact-form__checkbox {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.contact-form__checkbox input {
+  position: absolute;
+  opacity: 0;
+}
+
+.contact-form__checkmark {
+  align-items: center;
+  border: 1px solid var(--font-color-black);
+  border-radius: 3px;
+  display: flex;
+  height: 20px;
+  justify-content: center;
+  margin: 0 12px 0 0;
+  position: relative;
+  width: 20px;
+}
+
+.contact-form__checkmark-icon {
+  fill: var(--font-color-black);
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+  width: 100%;
+}
+
+.contact-form__checkbox input:checked + .contact-form__checkmark .contact-form__checkmark-icon {
+  opacity: 1;
+}
+
+.contact-form__privacy label {
+  align-items: center;
+  color: var(--font-color-black);
+  display: flex;
+  font-family: var(--font-family-yu-gothic);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.438;
+}
+
+.contact-form__privacy a {
+  color: var(--font-color-black);
+  font-family: var(--font-family-yu-gothic);
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.438;
+}
+
+.contact-form__button {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-form__button button {
+  background-color: var(--font-color-white);
+  border: 1px solid var(--font-color-black);
+  color: var(--font-color-black);
+  cursor: pointer;
+  font-family: var(--font-family-yu-gothic);
+  font-size: 16px;
+  font-weight: 500;
+  height: 50px;
+  letter-spacing: 0;
+  width: 300px;
+}

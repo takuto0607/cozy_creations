@@ -1,0 +1,57 @@
+{{ 'section-custom-contact.css' | asset_url | stylesheet_tag }}
+
+<section class="contact-form">
+  <div class="contact-form__content">
+    {%- form 'contact', id: 'ContactForm', class: 'contact-form__form' -%}
+      <div class="contact-form__fields">
+        <label><span class="contact-form__reqired">必須</span>お名前</label>
+        <input class="contact-form__input-text" type="text" name="contact[name]" placeholder="山田　太郎" required>
+      </div>
+      <div class="contact-form__fields">
+        <label><span class="contact-form__reqired">必須</span>電話番号</label>
+        <input class="contact-form__input-text" type="tel" name="contact[phone]" placeholder="000-000-0000" required>
+      </div>
+      <div class="contact-form__fields">
+        <label><span class="contact-form__reqired">必須</span>メールアドレス</label>
+        <input class="contact-form__input-text" type="email" name="contact[email]" placeholder="mail-address-A@co.jp" required>
+      </div>
+      <div class="contact-form__fields">
+        <label><span class="contact-form__optional">任意</span>お問い合わせに関するコメント</label>
+        <textarea name="contact[comment]" placeholder="お問い合わせ内容"></textarea>
+      </div>
+      <div class="contact-form__privacy">
+        <label class="contact-form__checkbox">
+          <input type="checkbox" required>
+          <span class="contact-form__checkmark">
+            <svg 
+              class="contact-form__checkmark-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 640 640"
+              aria-hidden="true">
+              <path d="M530.8 134.1C545.1 144.5 548.3 164.5 537.9 178.8L281.9 530.8C276.4 538.4 267.9 543.1 258.5 543.9C249.1 544.7 240 541.2 233.4 534.6L105.4 406.6C92.9 394.1 92.9 373.8 105.4 361.3C117.9 348.8 138.2 348.8 150.7 361.3L252.2 462.8L486.2 141.1C496.6 126.8 516.6 123.6 530.9 134z"/>
+            </svg>
+          </span>
+          <span class="contact-form__privacy-text">
+            <a href="" target="_blank">プライバシーポリシー</a>に同意する
+          </span>
+        </label>
+      </div>
+      <div class="contact-form__button">
+        <button type="submit">送信する</button>
+      </div>
+    {%- endform -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Contact Form",
+  "tag": "section",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Contact Form"
+    }
+  ]
+}
+{% endschema %}

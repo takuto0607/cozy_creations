@@ -25,6 +25,7 @@
   --font-color-gray3: rgb(248, 248, 248);
   --font-color-gray4: rgb(237, 237, 237);
   --font-color-gray5: rgba(245, 245, 245);
+  --font-color-gray6: rgba(208, 208, 208);
 }
 
 @media screen and (min-width: 990px) {
