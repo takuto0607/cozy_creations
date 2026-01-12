@@ -21,7 +21,7 @@
         "products_image": "shopify://shop_images/footer-products.jpg",
         "products_url": "",
         "address": "〒150-0001 東京都渋谷区神宮前5-12-3 コージービル3F",
-        "policy_menu": "",
+        "policy_menu": "policy-menu",
         "global_menu": "custom-footer-menu"
       }
     }
