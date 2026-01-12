@@ -196,10 +196,13 @@
 
 .product-card__image {
   line-height: 0;
+  overflow: hidden;
 }
 
 .product-card__image img {
+  object-fit: cover;
   aspect-ratio: 53 / 32;
+  height: 100%;
   width: 100%;
 }
 

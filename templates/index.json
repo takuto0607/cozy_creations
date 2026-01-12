@@ -86,7 +86,7 @@
         "title": "concept",
         "concept_image": "shopify://shop_images/concept.jpg",
         "concept_button_label": "view more",
-        "concept_button_url": ""
+        "concept_button_url": "shopify://pages/about-us"
       }
     },
     "news_section_DGrdqt": {
@@ -95,7 +95,7 @@
       "settings": {
         "title": "news / blog",
         "news_button_label": "view more",
-        "news_button_url": ""
+        "news_button_url": "shopify://blogs/news"
       }
     }
   },

@@ -1,0 +1,87 @@
+{{ 'section-product-list.css' | asset_url | stylesheet_tag }}
+
+<section id="products-page" class="products-page">
+  <div class="products-page__content">
+    <aside class="products-page__aside">
+      <div class="products-page__categories">
+        <h3 class="capitalize">category</h3>
+        <ul class="products-page__category-list">
+          {%- for product_category in collections -%}
+            {%- if product_category.handle != 'all' -%}
+              <li class="products-page__category-item">
+                <a class="capitalize" href="{{ product_category.url }}">{{ product_category.title }}</a>
+              </li>
+            {%- endif -%}
+          {%- endfor -%}
+        </ul>
+      </div>
+    </aside>
+    <div class="products-page__main">
+      {% paginate collection.products by section.settings.products_per_page %}
+      <div class="products-page__list-wrapper">
+        <ul class="products-page__product-list">
+          {%- if collection.products.size > 0 -%}
+            {% for product in collection.products %}
+              <li class="products-page__product-item">
+                {% render "product-card",
+                  product: product,
+                  show_size: false
+                %}
+              </li>
+            {% endfor %}
+          {%- else -%}
+            <p class="products-page__no-products">該当の商品はありません</p>
+          {%- endif -%}
+        </ul>
+      </div>
+
+      {% if paginate.pages > 1 %}
+        <nav class="products-page__pagination" role="navigation" aria-label="Pagination">
+          <ul class="products-page__pagination-list">
+            {% if paginate.previous %}
+              <li class="products-page__pagination-item products-page__pagination-item--prev prev">
+                <a class="capitalize" href="{{ paginate.previous.url }}">&lt; prev</a>
+              </li>
+            {% endif %}
+
+            {% for part in paginate.parts %}
+              <li class="products-page__pagination-item products-page__pagination-item--num
+                {% unless part.is_link %}is-current{% endunless %}">
+                {% if part.is_link %}
+                  <a href="{{ part.url }}">{{ part.title }}</a>
+                {% else %}
+                  <span aria-current="page">{{ part.title }}</span>
+                {% endif %}
+              </li>
+            {% endfor %}
+      
+            {% if paginate.next %}
+              <li class="products-page__pagination-item products-page__pagination-item--next next">
+                <a class="capitalize" href="{{ paginate.next.url }}">Next &gt;</a>
+              </li>
+            {% endif %}
+          </ul>
+        </nav>
+      {% endif %}
+      {% endpaginate %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Products",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "label": "表示件数",
+      "min": 3,
+      "max": 30,
+      "step": 1,
+      "default": 9
+    }
+  ]
+}
+{% endschema %}

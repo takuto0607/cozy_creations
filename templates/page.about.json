@@ -23,7 +23,7 @@
         "about_image_2": "shopify://shop_images/about_image_2.jpg",
         "about_image_3": "shopify://shop_images/about_image_3.jpg",
         "about_button_label": "contact",
-        "about_button_url": ""
+        "about_button_url": "shopify://pages/contact"
       }
     },
     "news_section_9MmPkq": {
@@ -32,7 +32,7 @@
       "settings": {
         "title": "news / blog",
         "news_button_label": "view more",
-        "news_button_url": ""
+        "news_button_url": "shopify://blogs/news"
       }
     }
   },
