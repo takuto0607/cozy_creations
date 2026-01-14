@@ -1,0 +1,190 @@
+/* ========== Products Detail ========== */
+.product-detail__content {
+  margin-inline: auto;
+  max-width: 1200px;
+  padding: 227px 0 0;
+  width: 100%;
+}
+
+.product-detail__main {
+  display: flex;
+  gap: 0 24px;
+  margin-bottom: 96px;
+}
+
+.pruduct-detail__image {
+  flex-shrink: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.pruduct-detail__image img {
+  aspect-ratio: 11 / 6;
+  object-fit: cover;
+  height: 100%;
+  width: 880px;
+}
+
+.product-detail__info {
+  width: 100%;
+}
+
+.product-detail__info h2 {
+  color: var(--font-color-black);
+  font-family: var(--font-family-shippori-mincho);
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.45;
+  margin: 0 0 20px;
+}
+
+.product-detail__item-id {
+  color: var(--font-color-black);
+  font-family: var(--font-family-marcellus);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5;
+  margin: 0 0 12px;
+}
+
+.product-detail__price {
+  border-bottom: 1px solid var(--font-color-black);
+  border-top: 1px solid var(--font-color-black);
+  margin-bottom: 12px;
+  padding: 16px 0;
+}
+
+.product-detail__price-base {
+  color: var(--font-color-black);
+  font-family: var(--font-family-yu-gothic);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 2;
+  margin: 0;
+}
+
+.product-detail__price-base {
+  font-family: var(--font-family-marcellus);
+}
+
+.product-detail__price-tax,
+.product-detail__stock {
+  color: var(--font-color-black);
+  font-family: var(--font-family-yu-gothic);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 2;
+  margin: 0;
+}
+
+.product-detail__price-tax span,
+.product-detail__stock span {
+  font-family: var(--font-family-marcellus);
+}
+
+/* デフォルトの矢印を消す */
+input.product-detail__quantity-input::-webkit-outer-spin-button,
+input.product-detail__quantity-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input.product-detail__quantity-input {
+  -moz-appearance: textfield; /* Firefox用 */
+}
+
+/* 数量入力値レイアウト */
+.product-detail__quantity-selector {
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--font-color-gray); /* 枠線 */
+  overflow: hidden;
+  height: 40px;
+  margin-bottom: 7px;
+  width: 160px;
+}
+
+.product-detail__quantity-btn {
+  background: inherit;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1.5;
+  padding: 3px 5px 3px;
+  transition: background 0.2s;
+}
+
+.product-detail__quantity-input {
+  border: none;
+  font-family: var(--font-family-marcellus);
+  font-size: 20px;
+  font-weight: 400;
+  height: 100%;
+  letter-spacing: 0.1em;
+  outline: none;
+  padding: 0;
+  pointer-events: none;
+  text-align: center;
+  width: 118px;
+}
+
+/* カート追加ボタンレイアウト */
+.product-custom__add {
+  background-color: var(--font-color-black);
+  border: 1px solid var(--font-color-black);
+  color: var(--font-color-white);
+  cursor: pointer;
+  font-family: var(--font-family-marcellus);
+  font-size: 16px;
+  font-weight: 400;
+  height: 56px;
+  letter-spacing: 0.1em;
+  position: relative;
+  width: 100%;
+}
+
+.product-custom__add::after {
+  background-color: var(--font-color-white);
+  clip-path: polygon(0 0, 0% 100%, 100% 50%);
+  -webkit-clip-path: polygon(0 0, 0% 100%, 100% 50%);
+  content: "";
+  height: 10px;
+  position: absolute;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  width: 10px;
+}
+
+.product-custom__add:hover {
+  opacity: 0.7;
+}
+
+.product-custom__add:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.prodcut-detail__description-inner {
+  margin: 0 auto 80px;
+  width: 720px;
+}
+
+.prodcut-detail__description-inner p {
+  color: var(--font-color-black);
+  font-family: var(--font-family-shippori-mincho);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.product-detail__button a {
+  border: 1px solid var(--font-color-black);
+  margin: 0 auto;
+}

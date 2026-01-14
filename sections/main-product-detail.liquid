@@ -1,0 +1,92 @@
+{{ 'section-product-detail.css' | asset_url | stylesheet_tag }}
+
+<section id="product-detail" class="product-detail">
+  <div class="product-detail__content">
+    <div class="product-detail__main">
+      <div class="pruduct-detail__image">
+        {% if product.featured_image %}
+          {{ product.featured_image
+            | image_url: width: 880
+            | image_tag
+          }}
+        {% endif %}
+      </div>
+      {% assign current_variant = product.selected_or_first_available_variant %}
+      {% assign tax_rate = 1.1 %}
+      {% assign price_with_tax = product.price | times: tax_rate | round %}
+      <div class="product-detail__info">
+        <h2>{{ product.title }}</h2>
+        {% assign current_variant = product.selected_or_first_available_variant %}
+        <p class="product-detail__item-id">Item ID：{{ current_variant.id }}</p>
+        <div class="product-detail__price">
+          <p class="product-detail__price-base">
+            本体価格：<span>{{ product.price | money }}</span>
+          </p>
+          <p class="product-detail__price-tax">
+            （税込価格：<span>{{ price_with_tax | money }}</span>）
+
+            {% if current_variant.inventory_management %}
+              <span class="product-detail__stock">
+                <span>在庫数量：</span>
+                {{ current_variant.inventory_quantity }}
+              </span>
+            {% endif %}
+          </p>
+        </div>
+        <form class="product-detail__form" method="post" action="{{ routes.cart_add_url }}">
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+          <div class="product-detail__quantity-selector">
+            <button type="button" class="product-detail__quantity-btn minus" aria-label="減らす">-</button>
+            <input type="number" name="quantity" value="0" min="0" class="product-detail__quantity-input" data-max="{{ current_variant.inventory_quantity }}" readonly>
+            <button type="button" class="product-detail__quantity-btn plus" aria-label="増やす">+</button>
+          </div>
+          <button
+            type="submit"
+            class="product-custom__add"
+            {% if current_variant.inventory_quantity <= 0 %}
+              disabled
+            {% endif %}>
+            Add to Cart
+          </button>
+        </form>
+      </div>
+    </div>
+    <div class="porduct-detail__description">
+      <div class="prodcut-detail__description-inner">
+        {{ product.description }}
+      </div>
+    </div>
+    <div class="product-detail__button">
+      {% render 'custom-button',
+        btn_url: section.settings.product_button_url,
+        btn_label: section.settings.product_button_label
+      %}
+    </div>
+  </div>
+</section>
+
+<script src="{{ 'product-page.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "Products",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "ボタンレイアウト"
+    },
+    {
+      "type": "text",
+      "id": "product_button_label",
+      "label": "ボタン文言",
+      "default": "一覧ページへ戻る"
+    },
+    {
+      "type": "url",
+      "id": "product_button_url",
+      "label": "リンク先"
+    }
+  ]
+}
+{% endschema %}
