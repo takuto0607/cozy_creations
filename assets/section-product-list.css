@@ -9,6 +9,56 @@
   width: 100%;
 }
 
+.products-page__search-input {
+  border: 1px solid var(--font-color-black);
+  display: flex;
+  height: 46px;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  overflow: hidden;
+  padding: 10px 16px;
+  width: 100%;
+}
+
+.products-page__search-input input[type="search"] {
+  border: none;
+  font-family: var(--font-family-yu-gothic);
+  font-size: 16px;
+  font-weight: 500;
+  height: 100%;
+  letter-spacing: 0;
+  outline: none;
+  width: 230px;
+}
+
+.products-page__search-input input[type="search"]:focus {
+  box-shadow: none;
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.products-page__search-form input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  display: none;
+}
+
+.products-page__search-form input[type="search"]::-webkit-search-decoration {
+  display: none;
+}
+
+.products-page__search-button {
+  background: inherit;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s;
+}
+
+.products-page__search-button svg {
+  height: 24px;
+  width: 24px;
+}
+
 .products-page__categories h3 {
   font-family: var(--font-family-marcellus);
   font-size: 20px;

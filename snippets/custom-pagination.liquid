@@ -1,0 +1,28 @@
+{% if paginate.pages > 1 %}
+  <nav class="products-page__pagination" role="navigation" aria-label="Pagination">
+    <ul class="products-page__pagination-list">
+      {% if paginate.previous %}
+        <li class="products-page__pagination-item products-page__pagination-item--prev prev">
+          <a class="capitalize" href="{{ paginate.previous.url }}">&lt; prev</a>
+        </li>
+      {% endif %}
+
+      {% for part in paginate.parts %}
+        <li class="products-page__pagination-item products-page__pagination-item--num
+          {% unless part.is_link %}is-current{% endunless %}">
+          {% if part.is_link %}
+            <a href="{{ part.url }}">{{ part.title }}</a>
+          {% else %}
+            <span aria-current="page">{{ part.title }}</span>
+          {% endif %}
+        </li>
+      {% endfor %}
+
+      {% if paginate.next %}
+        <li class="products-page__pagination-item products-page__pagination-item--next next">
+          <a class="capitalize" href="{{ paginate.next.url }}">Next &gt;</a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
+{% endif %}

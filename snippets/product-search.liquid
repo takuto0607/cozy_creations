@@ -1,0 +1,46 @@
+{% if search.performed %}
+  {% comment %} 検索結果 {% endcomment %}
+  {% paginate search.results by section.settings.products_per_page %}
+    <div class="products-page__list-wrapper">
+      <ul class="products-page__product-list">
+        {% assign has_products = false %}
+        {% for product in search.results %}
+          {% assign has_products = true %}
+          <li class="products-page__product-item">
+            {% render "product-card",
+              product: product,
+              show_size: false
+            %}
+          </li>
+        {% endfor %}
+    
+        {% unless has_products %}
+          <p class="products-page__no-products">
+            該当の商品はありません。
+          </p>
+        {% endunless %}
+      </ul>
+    </div>
+    
+    {% render 'custom-pagination', paginate: paginate %}
+  {% endpaginate %}
+{% else %}
+  {% comment %} 初期表示 {% endcomment %}
+  {% paginate collections.all.products by section.settings.products_per_page %}
+    <div class="products-page__list-wrapper">
+      <ul class="products-page__product-list">
+        {% for product in collections.all.products %}
+          <li class="products-page__product-item">
+            {% render "product-card",
+              product: product,
+              show_size: false
+            %}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    {% render 'custom-pagination', paginate: paginate %}
+  {% endpaginate %}
+{% endif %}
+

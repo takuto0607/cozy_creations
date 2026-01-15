@@ -1,0 +1,24 @@
+{% paginate collection.products by section.settings.products_per_page %}
+  <div class="products-page__list-wrapper">
+    <ul class="products-page__product-list">
+      {% assign has_products = false %}
+      {% for product in collection.products %}
+        {% assign has_products = true %}
+        <li class="products-page__product-item">
+          {% render "product-card",
+            product: product,
+            show_size: false
+          %}
+        </li>
+      {% endfor %}
+  
+      {% unless has_products %}
+        <p class="products-page__no-products">
+          該当の商品はありません。
+        </p>
+      {% endunless %}
+    </ul>
+  </div>
+  
+  {% render 'custom-pagination', paginate: paginate %}
+{% endpaginate %}
