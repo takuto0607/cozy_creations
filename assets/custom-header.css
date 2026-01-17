@@ -81,3 +81,31 @@
 .header-custom__icon path {
   fill: var(--header-icon-color);
 }
+
+@media screen and (max-width: 1279px) {
+  .custom-header__inner {
+    max-width: none;
+    margin-inline: 0 20px;
+    padding: 16px 0 11px;
+    width: auto;
+  }
+
+  .header__inline-menu ul {
+    gap: 0;
+  }
+
+  .cusutom-header__menu-right {
+    gap: 0 20px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .custom-header__inner {
+    margin-inline: auto;
+    margin: 0 20px;
+  }
+
+  .header__inline-menu {
+    display: none;
+  }
+}

@@ -1,0 +1,66 @@
+/* ========== Top Products ========== */
+.top-products {
+  margin-inline: auto;
+  max-width: 835px;
+  padding: 100px 0;
+  width: 100%;
+}
+
+.top-products h2 {
+  font-family: var(--font-family-marcellus);
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  margin: 0 0 32px;
+  text-align: center;
+}
+
+.new-products {
+  margin-bottom: 100px;
+}
+
+.new-products__list,
+.best-products__list {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+  margin: 0 0 40px;
+  padding: 0;
+}
+
+.new-products__item:nth-child(n + 4),
+.best-products__item:nth-child(n + 4) {
+  display: none;
+}
+
+.new-products__button,
+.best-products__button {
+  display: flex;
+  justify-content: center;
+}
+
+.new-products__button a,
+.best-products__button a {
+  border: 1px solid var(--font-color-black);
+}
+
+@media screen and (max-width: 1023px) {
+  .top-products {
+    margin-inline: 60px;
+    max-width: none;
+    width: auto;
+  }
+
+  .new-products__list,
+  .best-products__list {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    justify-content: center;
+  }
+
+  .new-products__item:nth-child(n + 4),
+  .best-products__item:nth-child(n + 4) {
+    display: block;
+  }
+}

@@ -46,8 +46,8 @@
   display: flex;
   justify-content: space-between;
   margin-inline: auto;
-  max-width: 1280px;
-  padding: 100px 0;
+  max-width: 1340px;
+  padding: 100px 30px;
   width: 100%;
 }
 
@@ -131,4 +131,31 @@
   line-height: 1.5;
   margin: 0;
   text-align: center;
+}
+
+@media screen and (max-width: 1279px) {
+  .custom-footer__cta {
+    margin-inline: 60px;
+    max-width: none;
+    width: auto;
+  }
+
+  .custom-footer__cta-link {
+    min-width: auto;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .custom-footer__cta {
+    flex-direction: column;
+  }
+
+  .custom-footer__main-content {
+    flex-direction: column;
+  }
+
+  .custom-footer__info {
+    margin-bottom: 40px;
+  }
 }

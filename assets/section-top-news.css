@@ -1,0 +1,124 @@
+/* ========== News ========== */
+.news {
+  background-color: var(--font-color-gray3);
+}
+
+.news__content {
+  display: flex;
+  justify-content: space-between;
+  margin-inline: auto;
+  max-width: 1200px;
+  padding: 100px 0;
+  width: 100%;
+}
+
+.news__title h2 {
+  font-family: var(--font-family-marcellus);
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  margin: 0 0 40px;
+}
+
+.news__button a {
+  background-color: inherit;
+  border: 1px solid var(--font-color-black);
+}
+
+.news__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.news__item {
+  border-bottom: 1px solid var(--font-color-black2);
+  width: 634px;
+}
+
+.news__list > .news__item:first-child {
+  border-top: 1px solid var(--font-color-black2);
+}
+
+.news__link {
+  color: var(--font-color-black);
+  display: block;
+  padding: 24px 10px;
+  text-decoration: none;
+}
+
+.news__item-meta {
+  display: flex;
+  gap: 0 15px;
+  margin-bottom: 15px;
+}
+
+.news__item-meta time {
+  font-family: var(--font-family-marcellus);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.news__category {
+  align-items: center;
+  background-color: var(--font-color-gray4);
+  border-radius: 20px;
+  display: flex;
+  font-family: var(--font-family-marcellus);
+  font-size: 12px;
+  height: 22px;
+  justify-content: center;
+  letter-spacing: 0;
+  line-height: 1.5;
+  width: 80px;
+}
+
+.news__link h3 {
+  font-family: var(--font-family-yu-gothic);
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.news__button--sp {
+  display: none;
+}
+
+@media screen and (max-width: 1279px) {
+  .news__content {
+    gap: 0 60px;
+    margin-inline: 60px;
+    max-width: none;
+    width: auto;
+  }
+
+  .news__item {
+    min-width: 540px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .news__content {
+    flex-direction: column;
+  }
+
+  .news__list {
+    margin-bottom: 40px;
+  }
+
+  .news__button--pc {
+    display: none;
+  }
+
+  .news__button--sp {
+    display: flex;
+    justify-content: center;
+  }
+}
