@@ -212,8 +212,8 @@
   }
 
   .archive-news__aside {
-    margin-bottom: 24px;
-    width: 100%;
+    margin: 0 auto 24px;
+    width: 345px;
   }
 
   .archive-news__category-item {
