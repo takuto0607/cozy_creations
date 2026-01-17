@@ -3,7 +3,7 @@
 <section id="products-page" class="products-page">
   <div class="products-page__content">
     <aside class="products-page__aside">
-      {%- if template.name == 'search' -%}
+      {%- if request.page_type == 'search' -%}
         <form action="{{ routes.search_url }}" method="get" class="products-page__search-form">
           <div class="products-page__search-input">
             <input
@@ -11,6 +11,8 @@
               name="q"
               value="{{ search.terms | escape }}"
               placeholder="検索する"
+              aria-label="商品検索"
+              autocomplete="off"
             >
             <button class="products-page__search-button" type="submit">
               <svg
@@ -27,7 +29,15 @@
           {%- for product_category in collections -%}
             {%- if product_category.handle != 'all' -%}
               <li class="products-page__category-item">
-                <a class="capitalize" href="{{ product_category.url }}">{{ product_category.title }}</a>
+                {%- if request.page_type == 'search' -%}
+                  <a class="capitalize" href="{{ routes.search_url }}?q={{ product_category.handle }}&collection={{ product_category.handle }}">
+                    {{ product_category.title }}
+                  </a>
+                {%- else -%}
+                  <a class="capitalize" href="{{ product_category.url }}">
+                    {{ product_category.title }}
+                  </a>
+                {%- endif -%}
               </li>
             {%- endif -%}
           {%- endfor -%}
@@ -35,7 +45,7 @@
       </div>
     </aside>
     <div class="products-page__main">
-      {%- if template.name == 'search' -%}
+      {%- if request.page_type == 'search' -%}
         {% render 'product-search', section: section %}
       {%- else -%}
         {% render 'product-collection', section: section %}
