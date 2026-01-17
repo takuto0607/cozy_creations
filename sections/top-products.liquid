@@ -1,3 +1,5 @@
+{{ 'section-top-products.css' | asset_url | stylesheet_tag }}
+
 <section id="top-products" class="top-products">
   <div class="top-products__content">
     {% if section.settings.show_new %}
@@ -8,7 +10,7 @@
             assign new_products = collections.all.products | sort: 'created_at' | reverse
           -%}
           {% if new_products.size > 0 %}
-            {% for product in new_products limit: section.settings.new_limit %}
+            {% for product in new_products limit: 4 %}
               <li class="new-products__item">
                 {% render "product-card",
                   product: product,
@@ -17,7 +19,7 @@
               </li>
             {% endfor %}
           {% else %}
-            {% for display_number in (1..section.settings.new_limit) %}
+            {% for display_number in (1..4) %}
               <li class="new-products__item">
                 <div class="product-card is-placeholder">
                   <div class="product-card__image placeholder"></div>
@@ -50,7 +52,7 @@
             assign best_products = collections.all.products
           -%}
           {% if best_products.size > 0 %}
-            {% for product in best_products limit: section.settings.best_limit %}
+            {% for product in best_products limit: 4 %}
               <li class="best-products__item">
                 {% render "product-card",
                   product: product,
@@ -59,7 +61,7 @@
               </li>
             {% endfor %}
           {% else %}
-            {% for display_number in (1..section.settings.best_limit) %}
+            {% for display_number in (1..4) %}
               <li class="best-products__item">
                 <div class="product-card is-placeholder">
                   <div class="product-card__image placeholder"></div>
@@ -108,15 +110,6 @@
       "default": "new arrivals"
     },
     {
-      "type": "range",
-      "id": "new_limit",
-      "label": "新着商品の表示件数",
-      "min": 1,
-      "max": 12,
-      "step": 1,
-      "default": 3
-    },
-    {
       "type": "header",
       "content": "ボタンレイアウト（新着商品）"
     },
@@ -146,15 +139,6 @@
       "id": "best_title",
       "label": "ベストセラー商品タイトル",
       "default": "best sells"
-    },
-    {
-      "type": "range",
-      "id": "best_limit",
-      "label": "新着商品の表示件数",
-      "min": 1,
-      "max": 12,
-      "step": 1,
-      "default": 3
     },
     {
       "type": "header",

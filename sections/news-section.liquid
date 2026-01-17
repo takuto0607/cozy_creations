@@ -1,8 +1,10 @@
+{{ 'section-top-news.css' | asset_url | stylesheet_tag }}
+
 <section id="news" class="news">
   <div class="news__content">
     <div class="news__title capitalize">
       <h2>{{ section.settings.title }}</h2>
-      <div class="news__button">
+      <div class="news__button news__button--pc">
         {% render 'custom-button',
           btn_url: section.settings.news_button_url,
           btn_label: section.settings.news_button_label
@@ -28,6 +30,12 @@
         </li>
       {%- endfor -%}
     </ul>
+    <div class="news__button news__button--sp">
+      {% render 'custom-button',
+        btn_url: section.settings.news_button_url,
+        btn_label: section.settings.news_button_label
+      %}
+    </div>
   </div>
 </section>
 

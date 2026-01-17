@@ -1,3 +1,5 @@
+{{ 'custom-footer.css' | asset_url | stylesheet_tag }}
+
 {%- style -%}
 .custom-footer__cta-link--contact::before {
   background-image: url('{{ section.settings.contact_image | image_url: width: 600 }}');

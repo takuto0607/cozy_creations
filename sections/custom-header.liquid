@@ -4,7 +4,7 @@
   <div class="custom-header__inner">
     {% render 'header-menu-left', menu: linklists['header-menu-left'] %}
     <div class="custom-header__logo">
-      <a href="{{ routes.root_url }}">
+      <a href="{{ routes.root_url }}" class="custom-header__logo-link">
         {%- if request.page_type == 'index' and section.settings.logo_home != blank -%}
           {{ section.settings.logo_home | image_url: width: 240 | image_tag }}
         {%- elsif section.settings.logo_default != blank -%}
@@ -18,19 +18,19 @@
       {% render 'header-menu-right', menu: linklists['header-menu-right'] %}
       <div class="custom-header__icon-group">
         {%- if section.settings.enable_search -%}
-          <a href="{{ routes.search_url }}" class="header-custom__icon" aria-label="Search">
+          <a href="{{ routes.search_url }}" class="header-custom__icon header-custom__icon--search" aria-label="Search">
             {{ 'icon-search.svg' | inline_asset_content }}
           </a>
         {%- endif -%}
   
         {%- if section.settings.enable_account -%}
-          <a href="{{ routes.account_url }}" class="header-custom__icon" aria-label="Account">
+          <a href="{{ routes.account_url }}" class="header-custom__icon header-custom__icon--account" aria-label="Account">
             {{ 'icon-account.svg' | inline_asset_content }}
           </a>
         {%- endif -%}
   
         {%- if section.settings.enable_cart -%}
-          <a href="{{ routes.cart_url }}" class="header-custom__icon" aria-label="Cart">
+          <a href="{{ routes.cart_url }}" class="header-custom__icon header-custom__icon--cart" aria-label="Cart">
             {{ 'icon-cart.svg' | inline_asset_content }}
           </a>
         {%- endif -%}
