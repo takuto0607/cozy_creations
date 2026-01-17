@@ -161,3 +161,27 @@
   letter-spacing: 0;
   width: 300px;
 }
+
+@media screen and (max-width: 767px) {
+  .contact-form__content {
+    margin-inline: 15px;
+    max-width: none;
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .contact-form__content {
+    margin-inline: 15px;
+    max-width: none;
+    width: auto;
+  }
+
+  .contact-form__fields {
+    margin-bottom: 30px;
+  }
+
+  .contact-form__privacy {
+    margin-bottom: 30px;
+  }
+}
