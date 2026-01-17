@@ -159,3 +159,36 @@
     margin-bottom: 40px;
   }
 }
+
+@media screen and (max-width: 639px) {
+  .custom-footer__cta {
+    margin-inline: 0;
+    padding: 60px 0;
+  }
+
+  .custom-footer__cta-link {
+    font-size: 24px;
+    height: 180px;
+  }
+
+  .custom-footer__main {
+    padding: 60px 15px;
+  }
+
+  .custom-footer__main-content {
+    padding: 0;
+  }
+
+  .custom-footer__nav {
+    padding: 11px 0;
+  }
+
+  .custom-footer__list {
+    flex-wrap: wrap;
+    gap: 3px 20px;
+  }
+
+  .custom-footer__copyright {
+    padding: 20px 0;
+  }
+}

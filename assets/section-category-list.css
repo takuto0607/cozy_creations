@@ -90,3 +90,16 @@
     width: 75%;
   }
 }
+
+@media screen and (max-width: 639px) {
+  .category-list__content {
+    margin-inline: 15px;
+    max-width: none;
+    padding: 60px 0;
+    width: auto;
+  }
+
+  .category-list__link {
+    width: 100%;
+  }
+}

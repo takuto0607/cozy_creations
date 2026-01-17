@@ -60,10 +60,15 @@
   gap: 0 40px;
 }
 
-.custom-header__logo a {
+.custom-header__logo-link {
   cursor: pointer;
   display: block;
   line-height: 0;
+}
+
+.custom-header__logo-link img {
+  aspect-ratio: 80 / 21;
+  height: auto;
 }
 
 /* Header Icon */
@@ -107,5 +112,36 @@
 
   .header__inline-menu {
     display: none;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .custom-header__inner {
+    margin: 0 12px;
+    padding: 12px 0;
+  }
+
+  .custom-header__logo-link img {
+    width: 120px;
+  }
+
+  .custom-header__icon-group {
+    gap: 0 12px;
+  }
+
+  .header-custom__icon {
+    padding: 0 2px;
+  }
+
+  .header-custom__icon--search svg {
+    width: 16px;
+  }
+
+  .header-custom__icon--account svg {
+    width: 14px;
+  }
+
+  .header-custom__icon--cart svg {
+    width: 18px;
   }
 }

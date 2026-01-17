@@ -59,3 +59,31 @@
     width: 345px;
   }
 }
+
+@media screen and (max-width: 767px) {
+  .concept__content {
+    flex-direction: column;
+    gap: 24px 0;
+  }
+
+  .concept__image {
+    display: flex;
+    justify-content: center;
+  }
+
+  .concept__button {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .concept__content {
+    margin-inline: 15px;
+    padding: 60px 0;
+  }
+
+  .concept__text h2 {
+    font-size: 24px;
+  }
+}

@@ -64,3 +64,25 @@
     display: block;
   }
 }
+
+@media screen and (max-width: 639px) {
+  .top-products {
+    margin-inline: 10px;
+    padding: 60px 0;
+  }
+
+  .new-products {
+    margin-bottom: 60px;
+  }
+
+  .top-products h2 {
+    font-size: 24px;
+  }
+
+  .new-products__list,
+  .best-products__list {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+}

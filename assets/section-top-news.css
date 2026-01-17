@@ -122,3 +122,22 @@
     justify-content: center;
   }
 }
+
+@media screen and (max-width: 639px) {
+  .news__content {
+    margin-inline: 10px;
+    padding: 60px 0;
+  }
+
+  .news__title h2 {
+    font-size: 24px;
+  }
+
+  .news__link {
+    padding: 15px 10px;
+  }
+
+  .news__item {
+    min-width: auto;
+  }
+}
