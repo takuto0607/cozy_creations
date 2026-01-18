@@ -23,3 +23,13 @@
   margin: 0;
   text-align: center;
 }
+
+@media screen and (max-width: 639px) {
+  .page-hero {
+    padding: 110px 0 73px;
+  }
+
+  .page-hero__title {
+    font-size: 48px;
+  }
+}

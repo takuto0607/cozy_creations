@@ -21,11 +21,13 @@
 .pruduct-detail__image img {
   aspect-ratio: 11 / 6;
   object-fit: cover;
-  height: 100%;
+  height: auto;
   width: 880px;
 }
 
 .product-detail__info {
+  flex-shrink: 0;
+  max-width: 296px;
   width: 100%;
 }
 
@@ -187,4 +189,49 @@ input.product-detail__quantity-input {
 .product-detail__button a {
   border: 1px solid var(--font-color-black);
   margin: 0 auto;
+}
+
+@media screen and (max-width: 1279px) {
+  .product-detail__content {
+    margin-inline: 60px;
+    max-width: none;
+    width: auto;
+  }
+
+  .pruduct-detail__image img {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 1023px) {
+  .product-detail__content {
+    padding: 160px 0 0;
+  }
+
+  .product-detail__main {
+    align-items: center;
+    flex-direction: column;
+    gap: 24px 0;
+    margin-bottom: 40px;
+  }
+
+  .prodcut-detail__description-inner {
+    margin: 0 auto 80px;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .product-detail__content {
+    margin-inline: 15px;
+    padding: 95.5px 0 0;
+  }
+
+  .pruduct-detail__image {
+    width: 100%;
+  }
+
+  .pruduct-detail__image img {
+    width: 100%;
+  }
 }

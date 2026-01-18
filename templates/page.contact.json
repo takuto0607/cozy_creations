@@ -12,8 +12,8 @@
     "hero": {
       "type": "page-hero",
       "settings": {
-        "title": "news",
-        "subtext": "お知らせ"
+        "title": "contact",
+        "subtext": "お問い合わせ"
       }
     },
     "form": {
