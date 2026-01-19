@@ -4,11 +4,18 @@
   <div class="custom-header__inner">
     {% render 'header-menu-left', menu: linklists['header-menu-left'] %}
     <div class="custom-header__logo">
-      <a href="{{ routes.root_url }}" class="custom-header__logo-link">
+      <a id="js-logo" href="{{ routes.root_url }}" class="custom-header__logo-link">
         {%- if request.page_type == 'index' and section.settings.logo_home != blank -%}
-          {{ section.settings.logo_home | image_url: width: 240 | image_tag }}
+          <span class="custom-header__logo-image custom-header__logo-image--home">
+            {{ section.settings.logo_home | image_url: width: 240 | image_tag }}
+          </span>
+          <span class="custom-header__logo-image custom-header__logo-image--active">
+            {{ section.settings.logo_default | image_url: width: 240 | image_tag }}
+          </span>
         {%- elsif section.settings.logo_default != blank -%}
-          {{ section.settings.logo_default | image_url: width: 240 | image_tag }}
+          <span class="custom-header__logo-image">
+            {{ section.settings.logo_default | image_url: width: 240 | image_tag }}
+          </span>
         {%- else -%}
           <span class="header-custom__logo-text capitalize">cozy creations</span>
         {%- endif -%}
@@ -16,28 +23,44 @@
     </div>
     <div class="cusutom-header__menu-right">
       {% render 'header-menu-right', menu: linklists['header-menu-right'] %}
-      <div class="custom-header__icon-group">
+      <div id="js-icon" class="custom-header__icon-group">
         {%- if section.settings.enable_search -%}
-          <a href="{{ routes.search_url }}" class="header-custom__icon header-custom__icon--search" aria-label="Search">
+          <a href="{{ routes.search_url }}" class="custom-header__icon custom-header__icon--search" aria-label="Search">
             {{ 'icon-search.svg' | inline_asset_content }}
           </a>
         {%- endif -%}
   
         {%- if section.settings.enable_account -%}
-          <a href="{{ routes.account_url }}" class="header-custom__icon header-custom__icon--account" aria-label="Account">
+          <a href="{{ routes.account_url }}" class="custom-header__icon custom-header__icon--account" aria-label="Account">
             {{ 'icon-account.svg' | inline_asset_content }}
           </a>
         {%- endif -%}
   
         {%- if section.settings.enable_cart -%}
-          <a href="{{ routes.cart_url }}" class="header-custom__icon header-custom__icon--cart" aria-label="Cart">
+          <a href="{{ routes.cart_url }}" class="custom-header__icon custom-header__icon--cart" aria-label="Cart">
             {{ 'icon-cart.svg' | inline_asset_content }}
           </a>
         {%- endif -%}
       </div>
+      <button class="custom-header__hamburger hamburger" id="js-hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
     </div>
   </div>
+  <nav class="custom-header__nav" id="js-nav">
+    <ul class="custom-header__nav-list">
+      {%- for link in linklists[section.settings.navi_menu].links -%}
+        <li class="custom-header__nav-item">
+          <a class="custom-header__nav-link capitalize" href="{{ link.url }}">{{ link.title }}</a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  </nav>
 </header>
+
+<script src="{{ 'hamburger-menu.js' | asset_url }}" defer="defer"></script>
 
 {% schema %}
 {
@@ -70,6 +93,11 @@
       "id": "enable_cart",
       "label": "カートアイコンを表示",
       "default": true
+    },
+    {
+      "type": "link_list",
+      "id": "navi_menu",
+      "label": "ナビメニュー"
     }
   ],
   "presets": [

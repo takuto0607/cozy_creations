@@ -33,6 +33,11 @@
             {% endif %}
           </p>
         </div>
+        {% if product.tags.size > 0 %}
+          <p class="product-detail__tag">
+            {{ product.tags | join: ', ' }}
+          </p>
+        {% endif %}
         <form class="product-detail__form" method="post" action="{{ routes.cart_add_url }}">
           <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
           <div class="product-detail__quantity-selector">

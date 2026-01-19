@@ -88,6 +88,16 @@
   font-family: var(--font-family-marcellus);
 }
 
+.product-detail__tag {
+  color: var(--font-color-black);
+  font-family: var(--font-family-marcellus);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5;
+  margin: 0 0 32px;
+}
+
 /* デフォルトの矢印を消す */
 input.product-detail__quantity-input::-webkit-outer-spin-button,
 input.product-detail__quantity-input::-webkit-inner-spin-button {

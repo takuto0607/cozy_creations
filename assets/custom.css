@@ -1,6 +1,8 @@
 /* ========== Base ========== */
+html,
+body,
 main {
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .uppercase {
   text-transform: uppercase;
@@ -119,6 +121,7 @@ main {
 }
 
 .product-card__content > h3 {
+  color: var(--font-color-black);
   font-family: var(--font-family-shippori-mincho);
   font-size: 16px;
   font-weight: 700;
@@ -129,10 +132,21 @@ main {
 
 .product-card__price .price,
 .product-card__price .price-tax {
+  color: var(--font-color-black);
   font-family: var(--font-family-shippori-mincho);
   font-size: 14px;
   font-weight: 700;
   letter-spacing: 0;
   line-height: 1;
   margin: 0 0 8px;
+}
+
+.product-card__tag {
+  color: var(--font-color-black);
+  font-family: var(--font-family-marcellus);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0;
+  line-height: 1.5;
+  margin: 8px 0 0;
 }

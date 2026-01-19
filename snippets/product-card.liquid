@@ -25,9 +25,9 @@
       </div>
 
       <!-- サイズ（条件表示） -->
-      {% if show_size and product.metafields.custom.size != blank %}
-        <p class="product-card__size">
-          サイズ：{{ product.metafields.custom.size }}
+      {% if show_size and product.tags.size > 0 %}
+        <p class="product-card__tag">
+          {{ product.tags | join: ', ' }}
         </p>
       {% endif %}
     </div>

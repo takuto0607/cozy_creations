@@ -18,7 +18,8 @@
         "logo_default": "shopify://shop_images/header_logo_default.png",
         "enable_search": true,
         "enable_account": true,
-        "enable_cart": true
+        "enable_cart": true,
+        "navi_menu": "navi-menu"
       }
     }
   },
