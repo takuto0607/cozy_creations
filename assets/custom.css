@@ -83,7 +83,12 @@ main {
 /* Product Card */
 .product-card {
   border: 1px solid var(--font-color-gray2);
+  transition: border-color .4s ease;
   width: 265px;
+}
+
+.product-card:hover {
+  border: 1px solid var(--font-color-black2);
 }
 
 .product-card__link {

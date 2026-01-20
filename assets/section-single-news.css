@@ -81,11 +81,23 @@
 .single-news__prev,
 .single-news__next {
   color: var(--font-color-black);
+  display: inline-flex;
   font-size: 20px;
   font-weight: 900;
   letter-spacing: 0;
   line-height: 1.5;
   text-decoration: none;
+  transition: opacity .4s ease;
+}
+
+.single-news__prev:hover,
+.single-news__next:hover {
+  opacity: 0.7;
+}
+
+.single-news__prev svg,
+.single-news__next svg {
+  width: 20px;
 }
 
 .single-news__button {
@@ -94,6 +106,10 @@
 
 .single-news__button a {
   border: 1px solid var(--font-color-black);
+}
+
+.single-news__button a:hover {
+  background-color: var(--font-color-white2);
 }
 
 @media screen and (max-width: 1023px) {

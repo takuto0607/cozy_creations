@@ -49,7 +49,12 @@
   cursor: pointer;
   display: flex;
   padding: 24px;
+  transition: opacity .4s ease;
   width: 100%;
+}
+
+.faq__button:hover {
+  opacity: 0.5;
 }
 
 .faq__item.is-open .faq__button {
@@ -127,6 +132,10 @@
 
 .faq__contact-button a {
   border: 1px solid var(--font-color-black);
+}
+
+.faq__contact-button a:hover {
+  background-color: var(--font-color-white2);
 }
 
 @media screen and (max-width: 1279px) {
