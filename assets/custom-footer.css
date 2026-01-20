@@ -22,8 +22,13 @@
   overflow: hidden;
   position: relative;
   text-decoration: none;
+  transition: opacity .4s ease;
   width: 100%;
   z-index: 1;
+}
+
+.custom-footer__cta-link:hover {
+  opacity: 0.9;
 }
 
 .custom-footer__cta-link::before {
@@ -95,6 +100,11 @@
   font-size: 16px;
   letter-spacing: 0;
   text-decoration: none;
+  transition: opacity .4s ease;
+}
+
+.custom-footer__policy a:hover {
+  opacity: 0.6;
 }
 
 .custom-footer__list {
@@ -116,6 +126,11 @@
   letter-spacing: 0;
   line-height: 1.5;
   text-decoration: none;
+  transition: opacity .4s ease;
+}
+
+.custom-footer__link:hover {
+  opacity: 0.6;
 }
 
 .custom-footer__copyright {

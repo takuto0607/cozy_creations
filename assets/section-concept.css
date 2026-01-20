@@ -38,6 +38,10 @@
   border: 1px solid var(--font-color-black);
 }
 
+.concept__button a:hover {
+  background-color: var(--font-color-white2);
+}
+
 @media screen and (max-width: 1279px) {
   .concept__content {
     margin-inline: 60px;

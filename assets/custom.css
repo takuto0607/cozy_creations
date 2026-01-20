@@ -23,6 +23,7 @@ main {
   --font-family-noto-sans-cjk-jp: "noto-sans-cjk-jp", sans-serif;
 
   --font-color-white: rgb(255, 255, 255);
+  --font-color-white2: rgb(243, 243, 243);
   --font-color-black: rgb(0, 0, 0);
   --font-color-black2: rgb(117, 116, 116);
   --font-color-gray: rgb(240, 240, 240);
@@ -31,6 +32,7 @@ main {
   --font-color-gray4: rgb(237, 237, 237);
   --font-color-gray5: rgba(245, 245, 245);
   --font-color-gray6: rgba(208, 208, 208);
+  --font-color-gray7: rgb(236, 234, 234);
 }
 
 @media screen and (min-width: 990px) {
@@ -61,6 +63,7 @@ main {
   justify-content: center;
   position: relative;
   text-decoration: none;
+  transition: background-color .4s ease;
   width: 300px;
 }
 
@@ -83,9 +86,14 @@ main {
   width: 265px;
 }
 
-.product-card a {
+.product-card__link {
   color: var(--font-color-black);
   text-decoration: none;
+  transition: opacity .4s ease;
+}
+
+.product-card__link:hover {
+  opacity: 0.8;
 }
 
 .product-card__image {

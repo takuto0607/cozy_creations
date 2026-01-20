@@ -68,6 +68,10 @@
   display: none;
 }
 
+.hero_button .custom-btn:hover {
+  background-color: var(--font-color-white2);
+}
+
 @media screen and (max-width: 1024px) {
   .hero__heading--pc {
     display: none;
