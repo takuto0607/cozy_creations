@@ -61,4 +61,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+  
+
+  const backButton = document.querySelector('.js-back-button');
+  if (!backButton) return;
+
+  backButton.addEventListener('click', function () {
+    history.back();
+  });
 });
