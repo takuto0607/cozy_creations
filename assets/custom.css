@@ -16,6 +16,19 @@ main {
   text-transform: capitalize;
 }
 
+.open-fade-up,
+.fade-up {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.open-fade-up.show,
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 :root {
   --font-family-shippori-mincho: "Shippori Mincho", serif;
   --font-family-marcellus: "Marcellus", serif;

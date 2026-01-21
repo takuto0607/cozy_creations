@@ -4,14 +4,14 @@
   <div class="top-products__content">
     {% if section.settings.show_new %}
       <div class="new-products">
-        <h2 class="capitalize">{{ section.settings.new_title }}</h2>
+        <h2 class="capitalize fade-up">{{ section.settings.new_title }}</h2>
         <ul class="new-products__list">
           {%- liquid
             assign new_products = collections.all.products | sort: 'created_at' | reverse
           -%}
           {% if new_products.size > 0 %}
             {% for product in new_products limit: 4 %}
-              <li class="new-products__item">
+              <li class="new-products__item fade-up">
                 {% render "product-card",
                   product: product,
                   show_size: false
@@ -20,7 +20,7 @@
             {% endfor %}
           {% else %}
             {% for display_number in (1..4) %}
-              <li class="new-products__item">
+              <li class="new-products__item fade-up">
                 <div class="product-card is-placeholder">
                   <div class="product-card__image placeholder"></div>
                   <div class="product-cart__content">
@@ -36,7 +36,7 @@
             {% endfor %}
           {% endif %}
         </ul>
-        <div class="new-products__button">
+        <div class="new-products__button fade-up">
           {% render 'custom-button',
             btn_url: section.settings.new_products_button_url,
             btn_label: section.settings.new_products_button_label
@@ -46,14 +46,14 @@
     {% endif %}
     {% if section.settings.show_best %}
       <div class="best-products">
-        <h2 class="capitalize">{{ section.settings.best_title }}</h2>
+        <h2 class="capitalize fade-up">{{ section.settings.best_title }}</h2>
         <ul class="best-products__list">
           {%- liquid
             assign best_products = collections.all.products
           -%}
           {% if best_products.size > 0 %}
             {% for product in best_products limit: 4 %}
-              <li class="best-products__item">
+              <li class="best-products__item fade-up">
                 {% render "product-card",
                   product: product,
                   show_size: false
@@ -62,7 +62,7 @@
             {% endfor %}
           {% else %}
             {% for display_number in (1..4) %}
-              <li class="best-products__item">
+              <li class="best-products__item fade-up">
                 <div class="product-card is-placeholder">
                   <div class="product-card__image placeholder"></div>
                   <div class="product-cart__content">
@@ -78,7 +78,7 @@
             {% endfor %}
           {% endif %}
         </ul>
-        <div class="new-products__button">
+        <div class="new-products__button fade-up">
           {% render 'custom-button',
             btn_url: section.settings.best_products_button_url,
             btn_label: section.settings.best_products_button_label

@@ -4,7 +4,7 @@
       {% assign has_products = false %}
       {% for product in collection.products %}
         {% assign has_products = true %}
-        <li class="products-page__product-item">
+        <li class="products-page__product-item fade-up">
           {% render "product-card",
             product: product,
             show_size: true

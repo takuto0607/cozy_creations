@@ -28,7 +28,7 @@
         <ul class="products-page__category-list">
           {%- for product_category in collections -%}
             {%- if product_category.handle != 'all' -%}
-              <li class="products-page__category-item">
+              <li class="products-page__category-item fade-up">
                 {%- if request.page_type == 'search' -%}
                   <a class="capitalize" href="{{ routes.search_url }}?q={{ product_category.handle }}&collection={{ product_category.handle }}">
                     {{ product_category.title }}

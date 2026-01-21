@@ -15,14 +15,14 @@
       {% assign tax_rate = 1.1 %}
       {% assign price_with_tax = product.price | times: tax_rate | round %}
       <div class="product-detail__info">
-        <h2>{{ product.title }}</h2>
+        <h2 class="fade-up">{{ product.title }}</h2>
         {% assign current_variant = product.selected_or_first_available_variant %}
-        <p class="product-detail__item-id">Item ID：{{ current_variant.id }}</p>
+        <p class="product-detail__item-id fade-up">Item ID：{{ current_variant.id }}</p>
         <div class="product-detail__price">
-          <p class="product-detail__price-base">
+          <p class="product-detail__price-base fade-up">
             本体価格：<span>{{ product.price | money }}</span>
           </p>
-          <p class="product-detail__price-tax">
+          <p class="product-detail__price-tax fade-up">
             （税込価格：<span>{{ price_with_tax | money }}</span>）
 
             {% if current_variant.inventory_management %}
@@ -34,7 +34,7 @@
           </p>
         </div>
         {% if product.tags.size > 0 %}
-          <p class="product-detail__tag">
+          <p class="product-detail__tag fade-up">
             {{ product.tags | join: ', ' }}
           </p>
         {% endif %}
@@ -57,7 +57,7 @@
       </div>
     </div>
     <div class="porduct-detail__description">
-      <div class="prodcut-detail__description-inner">
+      <div class="prodcut-detail__description-inner fade-up">
         {{ product.description }}
       </div>
     </div>

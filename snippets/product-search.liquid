@@ -6,7 +6,7 @@
         {% assign has_products = false %}
         {% for product in search.results %}
           {% assign has_products = true %}
-          <li class="products-page__product-item">
+          <li class="products-page__product-item fade-up">
             {% render "product-card",
               product: product,
               show_size: true
@@ -30,7 +30,7 @@
     <div class="products-page__list-wrapper">
       <ul class="products-page__product-list">
         {% for product in collections.all.products %}
-          <li class="products-page__product-item">
+          <li class="products-page__product-item fade-up">
             {% render "product-card",
               product: product,
               show_size: true

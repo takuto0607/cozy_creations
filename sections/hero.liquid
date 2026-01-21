@@ -9,7 +9,7 @@
 <section id="hero" class="hero">
   <div class="hero__bg">
     <div class="hero__content">
-      <h2>
+      <h2 class="open-fade-up">
         {% comment %} PCレイアウト {% endcomment %}
         <span class="hero__heading hero__heading--pc">
           <span>{{ section.settings.heading_pc_line1 | replace: '、', '<span class="comma">、</span>' }}</span>
@@ -24,7 +24,7 @@
         </span>
       </h2>
       <div class="hero__button-wrapper">
-        <div class="hero_button">
+        <div class="hero_button open-fade-up">
           {% render 'custom-button',
             btn_url: section.settings.button_url,
             btn_label: section.settings.button_label

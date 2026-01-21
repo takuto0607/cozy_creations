@@ -6,7 +6,7 @@
       <h3 class="capitalize">category</h3>
       <ul class="archive-news__categories">
         {% for tag in blog.all_tags %}
-          <li class="archive-news__category-item">
+          <li class="archive-news__category-item fade-up">
             <a class="capitalize" href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
           </li>
         {% endfor %}
@@ -16,7 +16,7 @@
       {% paginate blog.articles by section.settings.articles_per_page %}
         <div class="archive-news__list">
           {% for article in blog.articles %}
-            <article class="archive-news__item">
+            <article class="archive-news__item fade-up">
               <a class="archive-news__link" href="{{ article.url }}">
                 <div class="archive-news__item-meta">
                   <time datetime="{{ article.published_at | date: '%Y-%m-%d' }}">

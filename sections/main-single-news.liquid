@@ -22,13 +22,13 @@
         </span>
       {% endif %}
     </div>
-    <h3>{{ article.title }}</h3>
+    <h3 class="fade-up">{{ article.title }}</h3>
     {% if article.image %}
       <div class="single-news__image">
         {{ article.image | image_url: width: 480 | image_tag }}
       </div>
     {% endif %}
-    <div class="single-news__main rte">
+    <div class="single-news__main rte fade-up">
       {{ article.content }}
     </div>
     <div class="single-news__nav-wrapper">
